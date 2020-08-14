@@ -38,7 +38,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Content in Jupyter Book" href="content.html" />
+    <link rel="prev" title="Notebooks" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -71,55 +71,22 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
-  </a>
- </li>
-</ul>
+  <p class="caption">
+ <span class="caption-text">
+  notebooks
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
-  <a class="reference internal" href="content.html">
-   Content in Jupyter Book
+  <a class="current reference internal" href="#">
+   ETPAC MOM6 validation
   </a>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     ETPAC MOM6 validation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#read-datasets">
-     Read datasets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#aug-2020">
-     14 Aug 2020
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#id1">
-     13 Aug 2020
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="#july-2020">
-     24 July 2020
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
 </nav>
 
  <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
 
 </div>
 
@@ -164,6 +131,19 @@
 </div>
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dcherian/etpac"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -180,7 +160,154 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-datasets">
+   Read datasets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mom6">
+     MOM6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oisst">
+     OISST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mercator">
+     Mercator
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initial-conditon-ic">
+     Initial conditon (IC)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jra55">
+     JRA55
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oaflux">
+     OAFLUX
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tao">
+     TAO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argo-gridded">
+     Argo gridded
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aug-2020">
+   14 Aug 2020
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checking-initial-condition">
+     Checking initial condition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monthly-mean-sst-jan-oisst-monthly-mean">
+     Monthly mean SST (Jan) - OISST monthly mean
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subsurface-bias">
+     Subsurface bias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   13 Aug 2020
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monthly-mean-sst-oisst">
+     Monthly mean SST - OISST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-initial-condition">
+     Check initial condition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#july-2020">
+   24 July 2020
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-tao-1m-vs-model-sst">
+     all TAO 1m vs model SST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#w">
+     110°W
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Monthly mean SST - OISST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initial-sst-vs-oisst">
+     Initial SST vs OISST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     OAFlux
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#july-2020-first-etp-run">
+   17 July 2020: first ETP run
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     all TAO 1m vs model SST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     110°W
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     monthly mean SST - OISST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#net-heat-flux-vs-oaflux">
+     Net heat flux vs OAFLUX
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -3455,11 +3582,10 @@ Dimensions without coordinates: dim_0</pre><div class='xr-wrap' hidden><div clas
 </tr>
 </table></div></div>
 </div>
-</div>
 <div class="section" id="read-datasets">
-<h1>Read datasets<a class="headerlink" href="#read-datasets" title="Permalink to this headline">¶</a></h1>
+<h2>Read datasets<a class="headerlink" href="#read-datasets" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mom6">
-<h2>MOM6<a class="headerlink" href="#mom6" title="Permalink to this headline">¶</a></h2>
+<h3>MOM6<a class="headerlink" href="#mom6" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
@@ -5936,7 +6062,7 @@ Standard Names:
 </div>
 </div>
 <div class="section" id="oisst">
-<h2>OISST<a class="headerlink" href="#oisst" title="Permalink to this headline">¶</a></h2>
+<h3>OISST<a class="headerlink" href="#oisst" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lon</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sst</span><span class="o">.</span><span class="n">cf</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">]</span>
@@ -5962,7 +6088,7 @@ Standard Names:
 </div>
 </div>
 <div class="section" id="mercator">
-<h2>Mercator<a class="headerlink" href="#mercator" title="Permalink to this headline">¶</a></h2>
+<h3>Mercator<a class="headerlink" href="#mercator" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mercator</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="s2">&quot;/glade/scratch/bachman/cesm2_ETP/INPUT/MERCATOR_IC/*.nc&quot;</span><span class="p">)</span>
@@ -6339,7 +6465,7 @@ Attributes:
 </div>
 </div>
 <div class="section" id="initial-conditon-ic">
-<h2>Initial conditon (IC)<a class="headerlink" href="#initial-conditon-ic" title="Permalink to this headline">¶</a></h2>
+<h3>Initial conditon (IC)<a class="headerlink" href="#initial-conditon-ic" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ic</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dirname</span><span class="si">}</span><span class="s2">/INPUT/ETP_IC.nc&quot;</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;xh&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">temp</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
@@ -6706,7 +6832,7 @@ Coordinates:
 </div>
 </div>
 <div class="section" id="jra55">
-<h2>JRA55<a class="headerlink" href="#jra55" title="Permalink to this headline">¶</a></h2>
+<h3>JRA55<a class="headerlink" href="#jra55" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jra</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="s2">&quot;/glade/p/cesmdata/cseg/inputdata/ocn/jra55/v1.3_noleap/*[lwdn, swdn]*2013*171019.nc&quot;</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="p">)</span>
@@ -7302,7 +7428,7 @@ Kobayashi et al., 2015. The JRA-55 Reanalysis. J. Met. Soc. Jap., 93, 5-48 </dd>
 </div>
 </div>
 <div class="section" id="oaflux">
-<h2>OAFLUX<a class="headerlink" href="#oaflux" title="Permalink to this headline">¶</a></h2>
+<h3>OAFLUX<a class="headerlink" href="#oaflux" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">oaflux</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span>
@@ -7412,7 +7538,7 @@ Kobayashi et al., 2015. The JRA-55 Reanalysis. J. Met. Soc. Jap., 93, 5-48 </dd>
 </div>
 </div>
 <div class="section" id="tao">
-<h2>TAO<a class="headerlink" href="#tao" title="Permalink to this headline">¶</a></h2>
+<h3>TAO<a class="headerlink" href="#tao" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tao</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;~/TaoTritonPirataRama/TAO_TRITON/sst_xyt_dy.cdf&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
@@ -9025,7 +9151,7 @@ Attributes:
 </div>
 </div>
 <div class="section" id="argo-gridded">
-<h2>Argo gridded<a class="headerlink" href="#argo-gridded" title="Permalink to this headline">¶</a></h2>
+<h3>Argo gridded<a class="headerlink" href="#argo-gridded" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">argo</span> <span class="o">=</span> <span class="p">(</span>
@@ -9500,9 +9626,9 @@ Data variables:
 </div>
 </div>
 <div class="section" id="aug-2020">
-<h1>14 Aug 2020<a class="headerlink" href="#aug-2020" title="Permalink to this headline">¶</a></h1>
+<h2>14 Aug 2020<a class="headerlink" href="#aug-2020" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="checking-initial-condition">
-<h2>Checking initial condition<a class="headerlink" href="#checking-initial-condition" title="Permalink to this headline">¶</a></h2>
+<h3>Checking initial condition<a class="headerlink" href="#checking-initial-condition" title="Permalink to this headline">¶</a></h3>
 <p>Good new. We are indeed starting with 2013-01-01</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -9549,7 +9675,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="monthly-mean-sst-jan-oisst-monthly-mean">
-<h2>Monthly mean SST (Jan) - OISST monthly mean<a class="headerlink" href="#monthly-mean-sst-jan-oisst-monthly-mean" title="Permalink to this headline">¶</a></h2>
+<h3>Monthly mean SST (Jan) - OISST monthly mean<a class="headerlink" href="#monthly-mean-sst-jan-oisst-monthly-mean" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">sst</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">monthly_oisst</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -9565,7 +9691,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="subsurface-bias">
-<h2>Subsurface bias<a class="headerlink" href="#subsurface-bias" title="Permalink to this headline">¶</a></h2>
+<h3>Subsurface bias<a class="headerlink" href="#subsurface-bias" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">monthly</span> <span class="o">=</span> <span class="n">monthly</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
@@ -9620,13 +9746,13 @@ Data variables:
 </div>
 </div>
 <div class="section" id="id1">
-<h1>13 Aug 2020<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h2>13 Aug 2020<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Fixed flux error (using 1993 forcing with 2013 initial condition)</p></li>
 <li><p>But I think IC is still bad. Timestamp for <code class="docutils literal notranslate"><span class="pre">mercator.time[1]</span></code> is 2018-12-25</p></li>
 </ol>
 <div class="section" id="monthly-mean-sst-oisst">
-<h2>Monthly mean SST - OISST<a class="headerlink" href="#monthly-mean-sst-oisst" title="Permalink to this headline">¶</a></h2>
+<h3>Monthly mean SST - OISST<a class="headerlink" href="#monthly-mean-sst-oisst" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">oisst</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -9687,7 +9813,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="check-initial-condition">
-<h2>Check initial condition<a class="headerlink" href="#check-initial-condition" title="Permalink to this headline">¶</a></h2>
+<h3>Check initial condition<a class="headerlink" href="#check-initial-condition" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mersst</span> <span class="o">=</span> <span class="n">mercator</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">rename_like</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">sst</span><span class="p">)</span>
@@ -9712,13 +9838,13 @@ Data variables:
 </div>
 </div>
 <div class="section" id="july-2020">
-<h1>24 July 2020<a class="headerlink" href="#july-2020" title="Permalink to this headline">¶</a></h1>
+<h2>24 July 2020<a class="headerlink" href="#july-2020" title="Permalink to this headline">¶</a></h2>
 <p>“patch mapping everything”</p>
 <ol class="simple">
 <li><p>no blockiness in SST</p></li>
 </ol>
 <div class="section" id="all-tao-1m-vs-model-sst">
-<h2>all TAO 1m vs model SST<a class="headerlink" href="#all-tao-1m-vs-model-sst" title="Permalink to this headline">¶</a></h2>
+<h3>all TAO 1m vs model SST<a class="headerlink" href="#all-tao-1m-vs-model-sst" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s2">&quot;var&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;xh&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;yh&quot;</span><span class="p">)</span>
@@ -9734,7 +9860,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="w">
-<h2>110°W<a class="headerlink" href="#w" title="Permalink to this headline">¶</a></h2>
+<h3>110°W<a class="headerlink" href="#w" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">sst</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">360</span><span class="o">-</span><span class="mi">110</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -9752,7 +9878,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="id2">
-<h2>Monthly mean SST - OISST<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h3>Monthly mean SST - OISST<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">sst</span> <span class="o">-</span> <span class="n">monthly_oisst</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;monthly mean MOM6</span><span class="se">\n</span><span class="s2">- monthly mean OISST&quot;</span><span class="p">})</span>
@@ -9768,7 +9894,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="initial-sst-vs-oisst">
-<h2>Initial SST vs OISST<a class="headerlink" href="#initial-sst-vs-oisst" title="Permalink to this headline">¶</a></h2>
+<h3>Initial SST vs OISST<a class="headerlink" href="#initial-sst-vs-oisst" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">icsst</span> <span class="o">-</span> <span class="n">oisst</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
@@ -9841,7 +9967,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="id3">
-<h2>OAFlux<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h3>OAFlux<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fluxvars</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">cf_xarray</span><span class="o">.</span><span class="n">accessor</span><span class="o">.</span><span class="n">_get_list_standard_names</span><span class="p">(</span><span class="n">ds</span><span class="p">))</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span>
@@ -9922,11 +10048,11 @@ Data variables:
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="july-2020-first-etp-run">
 <h2>17 July 2020: first ETP run<a class="headerlink" href="#july-2020-first-etp-run" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="id4">
-<h2>all TAO 1m vs model SST<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h3>all TAO 1m vs model SST<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sst</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">hue</span><span class="o">=</span><span class="s2">&quot;var&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;xh&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;yh&quot;</span><span class="p">)</span>
@@ -9949,7 +10075,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="id5">
-<h2>110°W<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h3>110°W<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">sst</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">360</span><span class="o">-</span><span class="mi">110</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -9972,7 +10098,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="id6">
-<h2>monthly mean SST - OISST<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h3>monthly mean SST - OISST<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">monthly</span><span class="o">.</span><span class="n">sst</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
@@ -10373,7 +10499,7 @@ dl.xr-attrs {
 </div>
 </div>
 <div class="section" id="net-heat-flux-vs-oaflux">
-<h2>Net heat flux vs OAFLUX<a class="headerlink" href="#net-heat-flux-vs-oaflux" title="Permalink to this headline">¶</a></h2>
+<h3>Net heat flux vs OAFLUX<a class="headerlink" href="#net-heat-flux-vs-oaflux" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -10389,6 +10515,7 @@ dl.xr-attrs {
 </pre></div>
 </div>
 <img alt="_images/validation_75_1.png" src="_images/validation_75_1.png" />
+</div>
 </div>
 </div>
 </div>
@@ -10422,7 +10549,7 @@ dl.xr-attrs {
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="content.html" title="previous page">Content in Jupyter Book</a>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Notebooks</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
