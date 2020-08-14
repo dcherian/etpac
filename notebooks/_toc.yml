@@ -1,6 +1,7 @@
-- file: intro
-- file: content
-  sections:
+- file: intro  # must have one
+
+- part: notebooks
+  chapters:
     # - file: markdown
     # - file: notebooks
     - file: validation
