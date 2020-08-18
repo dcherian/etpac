@@ -11,7 +11,13 @@ repository:
 html:
   use_repository_button: true
   home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
+  extra_footer: |
+	<div>
+	<script data-goatcounter="https://count.cherian.net/count"
+                async src="static/count.js"></script>
+  	</div>
 
+	</div>
 latex:
   latex_documents:
     targetname: book.tex
