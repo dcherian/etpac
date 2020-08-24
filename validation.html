@@ -13136,18 +13136,12 @@ Data variables:
 
 
 <span class="k">def</span> <span class="nf">plot_section_diff</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">22</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">plot_mld</span><span class="p">(</span><span class="n">mimomcmld</span><span class="p">,</span> <span class="n">mom6mld</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">plot_mld</span><span class="p">(</span><span class="n">mimocmld</span><span class="p">,</span> <span class="n">mom6mld</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
         <span class="n">subsetter</span><span class="p">(</span><span class="n">mimocmld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">hmimoc</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">subsetter</span><span class="p">(</span><span class="n">mimocmld</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">hmimoc</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span><span class="n">mimocmld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
         <span class="n">subsetter</span><span class="p">(</span><span class="n">mom6mld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">hmom</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">subsetter</span><span class="p">(</span><span class="n">mom6mld</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">hmom</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span><span class="n">mom6mld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">hmimoc</span><span class="p">,</span> <span class="n">hmom</span>
 
@@ -13182,6 +13176,7 @@ Data variables:
         <span class="p">},</span>
         <span class="n">vmin</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span>
         <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="n">annual1deg</span> <span class="o">=</span> <span class="n">monthly1deg</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">monthly1deg</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
@@ -13190,16 +13185,19 @@ Data variables:
         <span class="n">annual1deg</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">Z</span><span class="o">=</span><span class="n">argo</span><span class="o">.</span><span class="n">cf</span><span class="p">[</span><span class="s2">&quot;Z&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
         <span class="o">-</span> <span class="n">argo</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">monthly1deg</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="n">annual_mean_bias</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="o">**</span><span class="n">dT_kwargs</span><span class="p">)</span>
-    <span class="n">subsetter</span><span class="p">(</span><span class="n">annual1deg</span><span class="p">)</span><span class="o">.</span><span class="n">thet</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="o">**</span><span class="n">T_kwargs</span><span class="p">)</span>
+    <span class="n">annual_mean_bias</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">dT_kwargs</span><span class="p">)</span>
+    <span class="n">subsetter</span><span class="p">(</span><span class="n">annual1deg</span><span class="p">)</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="o">**</span><span class="n">T_kwargs</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;MOM6 annual mean - Argo annual Mean [color];MOM6[red], </span><span class="si">{</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">lon</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span>
     <span class="p">)</span>
-    <span class="n">plot_mld</span><span class="p">(</span>
+    <span class="n">hmimoc</span><span class="p">,</span> <span class="n">hmom</span> <span class="o">=</span> <span class="n">plot_mld</span><span class="p">(</span>
         <span class="n">annual1deg</span><span class="o">.</span><span class="n">mld</span><span class="p">,</span>
-        <span class="n">mimocml</span><span class="o">.</span><span class="n">mld</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">mimocml</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">),</span>
+        <span class="n">mimocml</span><span class="o">.</span><span class="n">mld</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">mimocml</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">),</span>
         <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span>
     <span class="p">)</span>
+
+    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmimoc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MIMOC MLD&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MOM6 MLD&quot;</span><span class="p">)</span>
 
     <span class="c1">####</span>
     <span class="n">fg</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span>
@@ -13230,31 +13228,16 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">169</span><span class="o">-</span><span class="mi">933</span><span class="n">ab15950a1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plot_section_diff</span><span class="p">(</span><span class="o">-</span><span class="mi">110</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
-
-<span class="nn">&lt;ipython-input-168-d2653ac7a8de&gt;</span> in <span class="ni">plot_section_diff</span><span class="nt">(lon, ymax)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="o">-</span> <span class="n">argo</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">monthly1deg</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">100</span>     <span class="n">annual_mean_bias</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="o">**</span><span class="n">dT_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="n">subsetter</span><span class="p">(</span><span class="n">annual1deg</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="o">**</span><span class="n">T_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
-
-<span class="nn">~/python/xarray/xarray/core/common.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>                 <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>                     <span class="k">return</span> <span class="n">source</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">232</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>             <span class="s2">&quot;</span><span class="si">{!r}</span><span class="s2"> object has no attribute </span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>         <span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;DataArray&#39; object has no attribute &#39;thetao&#39;
+<div class="stderr docutils container">
+<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/python/xarray/xarray/plot/utils.py:624: MatplotlibDeprecationWarning: The &#39;extend&#39; parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+  cbar = fig.colorbar(primitive, **cbar_kwargs)
+/glade/u/home/dcherian/python/xarray/xarray/plot/facetgrid.py:420: MatplotlibDeprecationWarning: The &#39;extend&#39; parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+  self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 896x672 with 0 Axes&gt;
-</pre></div>
 </div>
+<img alt="_images/validation_46_1.png" src="_images/validation_46_1.png" />
+<img alt="_images/validation_46_2.png" src="_images/validation_46_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13265,14 +13248,15 @@ Data variables:
 </div>
 <div class="cell_output docutils container">
 <div class="stderr docutils container">
-<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/python/xarray/xarray/plot/plot.py:968: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
+<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/python/xarray/xarray/plot/utils.py:624: MatplotlibDeprecationWarning: The &#39;extend&#39; parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+  cbar = fig.colorbar(primitive, **cbar_kwargs)
 /glade/u/home/dcherian/python/xarray/xarray/plot/facetgrid.py:420: MatplotlibDeprecationWarning: The &#39;extend&#39; parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
 </div>
 <img alt="_images/validation_47_1.png" src="_images/validation_47_1.png" />
+<img alt="_images/validation_47_2.png" src="_images/validation_47_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13283,14 +13267,15 @@ Data variables:
 </div>
 <div class="cell_output docutils container">
 <div class="stderr docutils container">
-<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/python/xarray/xarray/plot/plot.py:968: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
+<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/python/xarray/xarray/plot/utils.py:624: MatplotlibDeprecationWarning: The &#39;extend&#39; parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+  cbar = fig.colorbar(primitive, **cbar_kwargs)
 /glade/u/home/dcherian/python/xarray/xarray/plot/facetgrid.py:420: MatplotlibDeprecationWarning: The &#39;extend&#39; parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
 </div>
 <img alt="_images/validation_48_1.png" src="_images/validation_48_1.png" />
+<img alt="_images/validation_48_2.png" src="_images/validation_48_2.png" />
 </div>
 </div>
 </div>
