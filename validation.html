@@ -28,6 +28,8 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -240,6 +242,26 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#euc">
      EUC
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vertical-profile-of-transport">
+       Vertical profile of transport
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#latitudinal-profile-of-transport">
+       Latitudinal profile of transport
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#u-longitudinal-profile-at-equator">
+     <span class="math notranslate nohighlight">
+      \(u\)
+     </span>
+     longitudinal profile at equator
     </a>
    </li>
   </ul>
@@ -3565,7 +3587,7 @@ roTBs2RqAAAAAElFTkSuQmCC'
     <span class="n">coords</span><span class="o">=</span><span class="s2">&quot;minimal&quot;</span><span class="p">,</span>
     <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">chunks</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;xh&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;xq&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,},</span>
-<span class="p">)[[</span><span class="s2">&quot;so&quot;</span><span class="p">,</span> <span class="s2">&quot;thetao&quot;</span><span class="p">,</span> <span class="s2">&quot;uo&quot;</span><span class="p">]]</span>
+<span class="p">)[[</span><span class="s2">&quot;so&quot;</span><span class="p">,</span> <span class="s2">&quot;thetao&quot;</span><span class="p">,</span> <span class="s2">&quot;uo&quot;</span><span class="p">,</span> <span class="s2">&quot;vo&quot;</span><span class="p">]]</span>
 <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetimeindex</span><span class="p">()</span>
 
 <span class="c1"># Make sure I have full months</span>
@@ -3583,7 +3605,7 @@ roTBs2RqAAAAAElFTkSuQmCC'
 </div>
 <div class="cell_output docutils container">
 <div class="stderr docutils container">
-<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-6-953c172e9f3c&gt;:16: RuntimeWarning: Converting a CFTimeIndex with dates from a non-standard calendar, &#39;noleap&#39;, to a pandas.DatetimeIndex, which uses dates from the standard calendar.  This may lead to subtle errors in operations that depend on the length of time between dates.
+<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-212-a6db0526c7b4&gt;:16: RuntimeWarning: Converting a CFTimeIndex with dates from a non-standard calendar, &#39;noleap&#39;, to a pandas.DatetimeIndex, which uses dates from the standard calendar.  This may lead to subtle errors in operations that depend on the length of time between dates.
   ds[&quot;time&quot;] = ds.indexes[&quot;time&quot;].to_datetimeindex()
 </pre></div>
 </div>
@@ -3939,24 +3961,26 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
-Dimensions:  (time: 424, xh: 1000, xq: 1001, yh: 900, zl: 140)
+Dimensions:  (time: 424, xh: 1000, xq: 1001, yh: 900, yq: 901, zl: 140)
 Coordinates:
   * xq       (xq) float64 235.0 235.1 235.1 235.2 ... 284.9 284.9 284.9 285.0
   * yh       (yh) float64 -14.97 -14.93 -14.88 -14.82 ... 29.88 29.92 29.98
   * xh       (xh) float64 235.0 235.1 235.1 235.2 ... 284.8 284.9 284.9 285.0
   * zl       (zl) float64 1.25 3.75 6.25 8.75 ... 6.074e+03 6.324e+03 6.475e+03
+  * yq       (yq) float64 -15.0 -14.95 -14.9 -14.85 ... 29.85 29.9 29.95 30.0
   * time     (time) datetime64[ns] 2013-01-01T12:00:00 ... 2014-02-28T12:00:00
 Data variables:
     so       (time, zl, yh, xh) float32 dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;
     thetao   (time, zl, yh, xh) float32 dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;
     uo       (time, zl, yh, xq) float32 dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;
+    vo       (time, zl, yq, xh) float32 dask.array&lt;chunksize=(1, 140, 901, 200), meta=np.ndarray&gt;
     sst      (time, yh, xh) float32 dask.array&lt;chunksize=(1, 900, 200), meta=np.ndarray&gt;
     mld      (time, yh, xh) float64 dask.array&lt;chunksize=(1, 900, 200), meta=np.ndarray&gt;
 Attributes:
     filename:   ocean_daily__2013_001.nc
     title:      MOM6 diagnostic fields table for CESM case: ETP.003
     grid_type:  regular
-    grid_tile:  N/A</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-69d5c1f3-8f99-43ae-8305-af40ed9b10ba' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-69d5c1f3-8f99-43ae-8305-af40ed9b10ba' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 424</li><li><span class='xr-has-index'>xh</span>: 1000</li><li><span class='xr-has-index'>xq</span>: 1001</li><li><span class='xr-has-index'>yh</span>: 900</li><li><span class='xr-has-index'>zl</span>: 140</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-db4b2f47-c290-4cb0-9a2a-19c20274a40d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-db4b2f47-c290-4cb0-9a2a-19c20274a40d' class='xr-section-summary' >Coordinates: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>xq</span></div><div class='xr-var-dims'>(xq)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>235.0 235.1 235.1 ... 284.9 285.0</div><input id='attrs-55b10b80-ac16-434c-90f9-788dd583e13f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-55b10b80-ac16-434c-90f9-788dd583e13f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-08a1dfee-74f7-4a80-9c25-d0b738d314fc' class='xr-var-data-in' type='checkbox'><label for='data-08a1dfee-74f7-4a80-9c25-d0b738d314fc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>q point nominal longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>cartesian_axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([235.  , 235.05, 235.1 , ..., 284.9 , 284.95, 285.  ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>yh</span></div><div class='xr-var-dims'>(yh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-14.97 -14.93 ... 29.92 29.98</div><input id='attrs-3161b731-00ff-45ec-815e-f5df2f4177c3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3161b731-00ff-45ec-815e-f5df2f4177c3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1527a311-65dd-4ee0-a3c9-e070d56dd177' class='xr-var-data-in' type='checkbox'><label for='data-1527a311-65dd-4ee0-a3c9-e070d56dd177' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>h point nominal latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>cartesian_axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-14.975, -14.925, -14.875, ...,  29.875,  29.925,  29.975])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>xh</span></div><div class='xr-var-dims'>(xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>235.0 235.1 235.1 ... 284.9 285.0</div><input id='attrs-201d888b-dfce-4eff-969a-88d1d4c28585' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-201d888b-dfce-4eff-969a-88d1d4c28585' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6d4de5da-145a-40a7-b103-66b58275bbe3' class='xr-var-data-in' type='checkbox'><label for='data-6d4de5da-145a-40a7-b103-66b58275bbe3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>h point nominal longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>cartesian_axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([235.025, 235.075, 235.125, ..., 284.875, 284.925, 284.975])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>zl</span></div><div class='xr-var-dims'>(zl)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.25 3.75 ... 6.324e+03 6.475e+03</div><input id='attrs-8c6cc70b-63f1-4b91-b9b6-3b26b411526c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8c6cc70b-63f1-4b91-b9b6-3b26b411526c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2d580b51-1733-4c6e-ad5e-a6c92974d38a' class='xr-var-data-in' type='checkbox'><label for='data-2d580b51-1733-4c6e-ad5e-a6c92974d38a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Layer pseudo-depth, -z*</dd><dt><span>units :</span></dt><dd>meter</dd><dt><span>cartesian_axis :</span></dt><dd>Z</dd><dt><span>positive :</span></dt><dd>down</dd></dl></div><div class='xr-var-data'><pre>array([1.250000e+00, 3.750000e+00, 6.250000e+00, 8.750000e+00, 1.125000e+01,
+    grid_tile:  N/A</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-68d43344-cdc4-4481-8155-f846397b8c9a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-68d43344-cdc4-4481-8155-f846397b8c9a' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 424</li><li><span class='xr-has-index'>xh</span>: 1000</li><li><span class='xr-has-index'>xq</span>: 1001</li><li><span class='xr-has-index'>yh</span>: 900</li><li><span class='xr-has-index'>yq</span>: 901</li><li><span class='xr-has-index'>zl</span>: 140</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-8510783b-6f00-455e-bce4-ed2874dd5303' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8510783b-6f00-455e-bce4-ed2874dd5303' class='xr-section-summary' >Coordinates: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>xq</span></div><div class='xr-var-dims'>(xq)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>235.0 235.1 235.1 ... 284.9 285.0</div><input id='attrs-bc589ebf-0584-4dce-b29f-1ae83767f054' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bc589ebf-0584-4dce-b29f-1ae83767f054' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3a6ae0e8-e993-49e1-9b43-6edd3d42a697' class='xr-var-data-in' type='checkbox'><label for='data-3a6ae0e8-e993-49e1-9b43-6edd3d42a697' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>q point nominal longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>cartesian_axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([235.  , 235.05, 235.1 , ..., 284.9 , 284.95, 285.  ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>yh</span></div><div class='xr-var-dims'>(yh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-14.97 -14.93 ... 29.92 29.98</div><input id='attrs-5dd70c3a-8c16-4758-be53-e3483de1bb47' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5dd70c3a-8c16-4758-be53-e3483de1bb47' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3ffcebf6-f8d3-43ff-8d14-c6671e397e61' class='xr-var-data-in' type='checkbox'><label for='data-3ffcebf6-f8d3-43ff-8d14-c6671e397e61' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>h point nominal latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>cartesian_axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-14.975, -14.925, -14.875, ...,  29.875,  29.925,  29.975])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>xh</span></div><div class='xr-var-dims'>(xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>235.0 235.1 235.1 ... 284.9 285.0</div><input id='attrs-4f970d75-e9ff-4f0e-a248-c4916154ccba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4f970d75-e9ff-4f0e-a248-c4916154ccba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2a2be962-e905-4dd2-871f-d7bc2e77313d' class='xr-var-data-in' type='checkbox'><label for='data-2a2be962-e905-4dd2-871f-d7bc2e77313d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>h point nominal longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>cartesian_axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([235.025, 235.075, 235.125, ..., 284.875, 284.925, 284.975])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>zl</span></div><div class='xr-var-dims'>(zl)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.25 3.75 ... 6.324e+03 6.475e+03</div><input id='attrs-fac56658-a0d5-406d-ac92-2b96250490e6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fac56658-a0d5-406d-ac92-2b96250490e6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a1d4aa71-40d0-4fd4-86dc-2f9ee18e1a7d' class='xr-var-data-in' type='checkbox'><label for='data-a1d4aa71-40d0-4fd4-86dc-2f9ee18e1a7d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Layer pseudo-depth, -z*</dd><dt><span>units :</span></dt><dd>meter</dd><dt><span>cartesian_axis :</span></dt><dd>Z</dd><dt><span>positive :</span></dt><dd>down</dd></dl></div><div class='xr-var-data'><pre>array([1.250000e+00, 3.750000e+00, 6.250000e+00, 8.750000e+00, 1.125000e+01,
        1.375000e+01, 1.625000e+01, 1.875000e+01, 2.125000e+01, 2.375000e+01,
        2.625000e+01, 2.875000e+01, 3.125000e+01, 3.375000e+01, 3.625000e+01,
        3.875000e+01, 4.125000e+01, 4.375000e+01, 4.625000e+01, 4.875000e+01,
@@ -3983,10 +4007,10 @@ Attributes:
        2.714525e+03, 2.847876e+03, 2.987895e+03, 3.134915e+03, 3.289286e+03,
        3.451375e+03, 3.621569e+03, 3.800272e+03, 3.987911e+03, 4.184931e+03,
        4.391803e+03, 4.609018e+03, 4.837094e+03, 5.076573e+03, 5.324234e+03,
-       5.574234e+03, 5.824234e+03, 6.074234e+03, 6.324234e+03, 6.474617e+03])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2013-01-01T12:00:00 ... 2014-02-...</div><input id='attrs-5f5813e1-fc9c-480e-8dcd-d94bd0e3e986' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-5f5813e1-fc9c-480e-8dcd-d94bd0e3e986' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9e8b8c61-77f1-430c-bc3c-8a2766f01406' class='xr-var-data-in' type='checkbox'><label for='data-9e8b8c61-77f1-430c-bc3c-8a2766f01406' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2013-01-01T12:00:00.000000000&#x27;, &#x27;2013-01-02T12:00:00.000000000&#x27;,
+       5.574234e+03, 5.824234e+03, 6.074234e+03, 6.324234e+03, 6.474617e+03])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>yq</span></div><div class='xr-var-dims'>(yq)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-15.0 -14.95 -14.9 ... 29.95 30.0</div><input id='attrs-3c8deea1-9d41-4177-b4a9-769bc660da60' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3c8deea1-9d41-4177-b4a9-769bc660da60' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-131b1fa5-a216-425d-892c-9106a6e241a7' class='xr-var-data-in' type='checkbox'><label for='data-131b1fa5-a216-425d-892c-9106a6e241a7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>q point nominal latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>cartesian_axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-15.  , -14.95, -14.9 , ...,  29.9 ,  29.95,  30.  ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2013-01-01T12:00:00 ... 2014-02-...</div><input id='attrs-dc67aece-868d-4454-b3f3-3d4f883d85da' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-dc67aece-868d-4454-b3f3-3d4f883d85da' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b361658c-85ef-4275-8daf-d118255fe24c' class='xr-var-data-in' type='checkbox'><label for='data-b361658c-85ef-4275-8daf-d118255fe24c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2013-01-01T12:00:00.000000000&#x27;, &#x27;2013-01-02T12:00:00.000000000&#x27;,
        &#x27;2013-01-03T12:00:00.000000000&#x27;, ..., &#x27;2014-02-26T12:00:00.000000000&#x27;,
        &#x27;2014-02-27T12:00:00.000000000&#x27;, &#x27;2014-02-28T12:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fc78ea5f-ddc9-4771-9e49-a223952a2ea9' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fc78ea5f-ddc9-4771-9e49-a223952a2ea9' class='xr-section-summary' >Data variables: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>so</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-062d309a-dc3e-483a-b67c-648a2b2eeb4e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-062d309a-dc3e-483a-b67c-648a2b2eeb4e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d1464b87-8f76-4af2-8591-9b7d60dee865' class='xr-var-data-in' type='checkbox'><label for='data-d1464b87-8f76-4af2-8591-9b7d60dee865' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water Salinity</dd><dt><span>units :</span></dt><dd>psu</dd><dt><span>cell_methods :</span></dt><dd>area:mean zl:mean yh:mean xh:mean time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_salinity</dd></dl></div><div class='xr-var-data'><table>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b6c20fd8-75d7-4583-837b-8922b1c8cf85' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b6c20fd8-75d7-4583-837b-8922b1c8cf85' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>so</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-37170664-a37c-4bd7-b129-bafa21d38311' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-37170664-a37c-4bd7-b129-bafa21d38311' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f81096b4-5a9e-4a47-a5f5-b819aa02bc24' class='xr-var-data-in' type='checkbox'><label for='data-f81096b4-5a9e-4a47-a5f5-b819aa02bc24' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water Salinity</dd><dt><span>units :</span></dt><dd>psu</dd><dt><span>cell_methods :</span></dt><dd>area:mean zl:mean yh:mean xh:mean time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_salinity</dd></dl></div><div class='xr-var-data'><table>
 <tr>
 <td>
 <table>
@@ -3996,7 +4020,7 @@ Attributes:
   <tbody>
     <tr><th> Bytes </th><td> 213.70 GB </td> <td> 100.80 MB </td></tr>
     <tr><th> Shape </th><td> (424, 140, 900, 1000) </td> <td> (1, 140, 900, 200) </td></tr>
-    <tr><th> Count </th><td> 6949 Tasks </td><td> 2120 Chunks </td></tr>
+    <tr><th> Count </th><td> 7048 Tasks </td><td> 2120 Chunks </td></tr>
     <tr><th> Type </th><td> float32 </td><td> numpy.ndarray </td></tr>
   </tbody>
 </table>
@@ -4491,7 +4515,7 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>thetao</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-39d5aff2-1df1-4e96-bc30-dd01bb24c0a3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-39d5aff2-1df1-4e96-bc30-dd01bb24c0a3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3aa31af1-ff5f-4e35-805e-81470c4f6f9f' class='xr-var-data-in' type='checkbox'><label for='data-3aa31af1-ff5f-4e35-805e-81470c4f6f9f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water Potential Temperature</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>cell_methods :</span></dt><dd>area:mean zl:mean yh:mean xh:mean time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_potential_temperature</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>thetao</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-2903a5c7-aaa1-4e45-9deb-f3b9f60a2d7d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2903a5c7-aaa1-4e45-9deb-f3b9f60a2d7d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-56c3c69c-ed26-4f8e-8b90-e1c40f64b855' class='xr-var-data-in' type='checkbox'><label for='data-56c3c69c-ed26-4f8e-8b90-e1c40f64b855' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water Potential Temperature</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>cell_methods :</span></dt><dd>area:mean zl:mean yh:mean xh:mean time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_potential_temperature</dd></dl></div><div class='xr-var-data'><table>
 <tr>
 <td>
 <table>
@@ -4501,7 +4525,7 @@ Attributes:
   <tbody>
     <tr><th> Bytes </th><td> 213.70 GB </td> <td> 100.80 MB </td></tr>
     <tr><th> Shape </th><td> (424, 140, 900, 1000) </td> <td> (1, 140, 900, 200) </td></tr>
-    <tr><th> Count </th><td> 6949 Tasks </td><td> 2120 Chunks </td></tr>
+    <tr><th> Count </th><td> 7048 Tasks </td><td> 2120 Chunks </td></tr>
     <tr><th> Type </th><td> float32 </td><td> numpy.ndarray </td></tr>
   </tbody>
 </table>
@@ -4996,7 +5020,7 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uo</span></div><div class='xr-var-dims'>(time, zl, yh, xq)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-5516d83f-0a2d-4028-add5-499033993fbc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5516d83f-0a2d-4028-add5-499033993fbc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b0dd84bc-4e4a-438a-b2a5-aa47ec029480' class='xr-var-data-in' type='checkbox'><label for='data-b0dd84bc-4e4a-438a-b2a5-aa47ec029480' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water X Velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>cell_methods :</span></dt><dd>zl:mean yh:mean xq:point time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_x_velocity</dd><dt><span>interp_method :</span></dt><dd>none</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>uo</span></div><div class='xr-var-dims'>(time, zl, yh, xq)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 140, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-18c831fc-0cbf-418a-a2bb-a6505792e319' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-18c831fc-0cbf-418a-a2bb-a6505792e319' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f14862a9-8fe9-41a2-afda-a69d1f0b5f72' class='xr-var-data-in' type='checkbox'><label for='data-f14862a9-8fe9-41a2-afda-a69d1f0b5f72' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water X Velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>cell_methods :</span></dt><dd>zl:mean yh:mean xq:point time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_x_velocity</dd><dt><span>interp_method :</span></dt><dd>none</dd></dl></div><div class='xr-var-data'><table>
 <tr>
 <td>
 <table>
@@ -5006,7 +5030,7 @@ Attributes:
   <tbody>
     <tr><th> Bytes </th><td> 213.91 GB </td> <td> 100.80 MB </td></tr>
     <tr><th> Shape </th><td> (424, 140, 900, 1001) </td> <td> (1, 140, 900, 200) </td></tr>
-    <tr><th> Count </th><td> 8251 Tasks </td><td> 2544 Chunks </td></tr>
+    <tr><th> Count </th><td> 8368 Tasks </td><td> 2544 Chunks </td></tr>
     <tr><th> Type </th><td> float32 </td><td> numpy.ndarray </td></tr>
   </tbody>
 </table>
@@ -5503,7 +5527,512 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sst</span></div><div class='xr-var-dims'>(time, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-8596449b-1df4-454a-9d96-7a5ea0024b47' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8596449b-1df4-454a-9d96-7a5ea0024b47' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9716748c-d301-44d0-9996-19cd02f2e170' class='xr-var-data-in' type='checkbox'><label for='data-9716748c-d301-44d0-9996-19cd02f2e170' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water Potential Temperature</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>cell_methods :</span></dt><dd>area:mean zl:mean yh:mean xh:mean time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_potential_temperature</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vo</span></div><div class='xr-var-dims'>(time, zl, yq, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 140, 901, 200), meta=np.ndarray&gt;</div><input id='attrs-9eabec8a-f8fe-46b5-85fb-0da0d6ea9b11' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9eabec8a-f8fe-46b5-85fb-0da0d6ea9b11' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4d0cd518-a03c-4ff9-a939-7fdcb134b262' class='xr-var-data-in' type='checkbox'><label for='data-4d0cd518-a03c-4ff9-a939-7fdcb134b262' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water Y Velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>cell_methods :</span></dt><dd>zl:mean yq:point xh:mean time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_y_velocity</dd><dt><span>interp_method :</span></dt><dd>none</dd></dl></div><div class='xr-var-data'><table>
+<tr>
+<td>
+<table>
+  <thead>
+    <tr><td> </td><th> Array </th><th> Chunk </th></tr>
+  </thead>
+  <tbody>
+    <tr><th> Bytes </th><td> 213.93 GB </td> <td> 100.91 MB </td></tr>
+    <tr><th> Shape </th><td> (424, 140, 901, 1000) </td> <td> (1, 140, 901, 200) </td></tr>
+    <tr><th> Count </th><td> 7048 Tasks </td><td> 2120 Chunks </td></tr>
+    <tr><th> Type </th><td> float32 </td><td> numpy.ndarray </td></tr>
+  </tbody>
+</table>
+</td>
+<td>
+<svg width="433" height="181" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="50" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="50" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="0" y1="0" x2="0" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="1" y1="0" x2="1" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="2" y1="0" x2="2" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="3" y1="0" x2="3" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="4" y1="0" x2="4" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="5" y1="0" x2="5" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="6" y1="0" x2="6" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="7" y1="0" x2="7" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="8" y1="0" x2="8" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="9" y1="0" x2="9" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="10" y1="0" x2="10" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="11" y1="0" x2="11" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="12" y1="0" x2="12" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="13" y1="0" x2="13" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="14" y1="0" x2="14" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="15" y1="0" x2="15" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="16" y1="0" x2="16" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="17" y1="0" x2="17" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="18" y1="0" x2="18" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="19" y1="0" x2="19" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="20" y1="0" x2="20" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="21" y1="0" x2="21" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="22" y1="0" x2="22" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="23" y1="0" x2="23" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="24" y1="0" x2="24" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="25" y1="0" x2="25" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="26" y1="0" x2="26" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="27" y1="0" x2="27" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="28" y1="0" x2="28" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="29" y1="0" x2="29" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="30" y1="0" x2="30" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="31" y1="0" x2="31" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="32" y1="0" x2="32" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="33" y1="0" x2="33" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="34" y1="0" x2="34" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="35" y1="0" x2="35" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="36" y1="0" x2="36" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="37" y1="0" x2="37" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="38" y1="0" x2="38" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="39" y1="0" x2="39" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="40" y1="0" x2="40" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="41" y1="0" x2="41" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="42" y1="0" x2="42" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="43" y1="0" x2="43" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="44" y1="0" x2="44" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="45" y1="0" x2="45" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="46" y1="0" x2="46" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="47" y1="0" x2="47" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="48" y1="0" x2="48" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="49" y1="0" x2="49" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" />
+  <line x1="50" y1="0" x2="50" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.000000,0.000000 50.880000,0.000000 50.880000,25.412617 0.000000,25.412617" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="25.440000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >424</text>
+  <text x="70.880000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,70.880000,12.706308)">1</text>
+
+
+  <!-- Horizontal lines -->
+  <line x1="120" y1="0" x2="143" y2="23" style="stroke-width:2" />
+  <line x1="120" y1="108" x2="143" y2="131" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="120" y1="0" x2="120" y2="108" style="stroke-width:2" />
+  <line x1="143" y1="23" x2="143" y2="131" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="120.000000,0.000000 143.746216,23.746216 143.746216,131.866216 120.000000,108.120000" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="120" y1="0" x2="240" y2="0" style="stroke-width:2" />
+  <line x1="143" y1="23" x2="263" y2="23" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="120" y1="0" x2="143" y2="23" style="stroke-width:2" />
+  <line x1="144" y1="0" x2="167" y2="23" />
+  <line x1="168" y1="0" x2="191" y2="23" />
+  <line x1="192" y1="0" x2="215" y2="23" />
+  <line x1="216" y1="0" x2="239" y2="23" />
+  <line x1="240" y1="0" x2="263" y2="23" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="120.000000,0.000000 240.000000,0.000000 263.746216,23.746216 143.746216,23.746216" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Horizontal lines -->
+  <line x1="143" y1="23" x2="263" y2="23" style="stroke-width:2" />
+  <line x1="143" y1="131" x2="263" y2="131" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="143" y1="23" x2="143" y2="131" style="stroke-width:2" />
+  <line x1="167" y1="23" x2="167" y2="131" />
+  <line x1="191" y1="23" x2="191" y2="131" />
+  <line x1="215" y1="23" x2="215" y2="131" />
+  <line x1="239" y1="23" x2="239" y2="131" />
+  <line x1="263" y1="23" x2="263" y2="131" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="143.746216,23.746216 263.746216,23.746216 263.746216,131.866216 143.746216,131.866216" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="203.746216" y="151.866216" font-size="1.0rem" font-weight="100" text-anchor="middle" >1000</text>
+  <text x="283.746216" y="77.806216" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,283.746216,77.806216)">901</text>
+  <text x="121.873108" y="139.993108" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,121.873108,139.993108)">140</text>
+</svg>
+</td>
+</tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>sst</span></div><div class='xr-var-dims'>(time, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-412ff1af-c57c-406d-b36a-62f98c5eff43' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-412ff1af-c57c-406d-b36a-62f98c5eff43' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4df299ef-9e2c-4419-bf85-5cea94bbb626' class='xr-var-data-in' type='checkbox'><label for='data-4df299ef-9e2c-4419-bf85-5cea94bbb626' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea Water Potential Temperature</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>cell_methods :</span></dt><dd>area:mean zl:mean yh:mean xh:mean time: mean</dd><dt><span>time_avg_info :</span></dt><dd>average_T1,average_T2,average_DT</dd><dt><span>standard_name :</span></dt><dd>sea_water_potential_temperature</dd></dl></div><div class='xr-var-data'><table>
 <tr>
 <td>
 <table>
@@ -5513,7 +6042,7 @@ Attributes:
   <tbody>
     <tr><th> Bytes </th><td> 1.53 GB </td> <td> 720.00 kB </td></tr>
     <tr><th> Shape </th><td> (424, 900, 1000) </td> <td> (1, 900, 200) </td></tr>
-    <tr><th> Count </th><td> 9069 Tasks </td><td> 2120 Chunks </td></tr>
+    <tr><th> Count </th><td> 9168 Tasks </td><td> 2120 Chunks </td></tr>
     <tr><th> Type </th><td> float32 </td><td> numpy.ndarray </td></tr>
   </tbody>
 </table>
@@ -6415,7 +6944,7 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>mld</span></div><div class='xr-var-dims'>(time, yh, xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-64a37fff-9932-4478-93a0-9802ccf75607' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-64a37fff-9932-4478-93a0-9802ccf75607' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9a0033c9-5ac1-4fc1-a5be-69a437f77884' class='xr-var-data-in' type='checkbox'><label for='data-9a0033c9-5ac1-4fc1-a5be-69a437f77884' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>mld</span></div><div class='xr-var-dims'>(time, yh, xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1, 900, 200), meta=np.ndarray&gt;</div><input id='attrs-7f6abfc7-21e5-4ce5-af1e-7cae3dbd8027' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-7f6abfc7-21e5-4ce5-af1e-7cae3dbd8027' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1292aef4-49ec-4d21-a6c9-d9e936825d27' class='xr-var-data-in' type='checkbox'><label for='data-1292aef4-49ec-4d21-a6c9-d9e936825d27' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><table>
 <tr>
 <td>
 <table>
@@ -6425,7 +6954,7 @@ Attributes:
   <tbody>
     <tr><th> Bytes </th><td> 3.05 GB </td> <td> 1.44 MB </td></tr>
     <tr><th> Shape </th><td> (424, 900, 1000) </td> <td> (1, 900, 200) </td></tr>
-    <tr><th> Count </th><td> 37219 Tasks </td><td> 2120 Chunks </td></tr>
+    <tr><th> Count </th><td> 37417 Tasks </td><td> 2120 Chunks </td></tr>
     <tr><th> Type </th><td> float64 </td><td> numpy.ndarray </td></tr>
   </tbody>
 </table>
@@ -7327,7 +7856,7 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-27ffe914-cec5-44a1-b283-fa6822a7a38e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-27ffe914-cec5-44a1-b283-fa6822a7a38e' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>filename :</span></dt><dd>ocean_daily__2013_001.nc</dd><dt><span>title :</span></dt><dd>MOM6 diagnostic fields table for CESM case: ETP.003</dd><dt><span>grid_type :</span></dt><dd>regular</dd><dt><span>grid_tile :</span></dt><dd>N/A</dd></dl></div></li></ul></div></div></div></div>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-a161a2da-de7e-45bd-82ab-c0c254d2523c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a161a2da-de7e-45bd-82ab-c0c254d2523c' class='xr-section-summary' >Attributes: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>filename :</span></dt><dd>ocean_daily__2013_001.nc</dd><dt><span>title :</span></dt><dd>MOM6 diagnostic fields table for CESM case: ETP.003</dd><dt><span>grid_type :</span></dt><dd>regular</dd><dt><span>grid_tile :</span></dt><dd>N/A</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7375,7 +7904,7 @@ Standard Names:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthly</span><span class="p">[</span><span class="s2">&quot;D20&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcpy</span><span class="o">.</span><span class="n">interpolate</span><span class="o">.</span><span class="n">pchip_roots</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">thetao</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s2">&quot;zl&quot;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mf">20.0</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthly</span><span class="p">[</span><span class="s2">&quot;D20&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dcpy</span><span class="o">.</span><span class="n">interpolate</span><span class="o">.</span><span class="n">pchip_roots</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">thetao</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s2">&quot;zl&quot;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="mf">20.0</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -13386,7 +13915,9 @@ Data variables:
 <hr class="docutils" />
 <div class="section" id="euc">
 <h3>EUC<a class="headerlink" href="#euc" title="Permalink to this headline">¶</a></h3>
-<p>Note <code class="docutils literal notranslate"><span class="pre">x=235</span></code> is the boundary.</p>
+<p>Note <code class="docutils literal notranslate"><span class="pre">x=235</span></code> is the boundary. Zonal transport at western boudnary is weak → compensated by a meridional rim current.</p>
+<div class="section" id="vertical-profile-of-transport">
+<h4>Vertical profile of transport<a class="headerlink" href="#vertical-profile-of-transport" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fg</span> <span class="o">=</span> <span class="n">johnson</span><span class="o">.</span><span class="n">eucz</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
@@ -13400,9 +13931,12 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(600.0, 0.0)
 </pre></div>
 </div>
-<img alt="_images/validation_56_1.png" src="_images/validation_56_1.png" />
+<img alt="_images/validation_57_1.png" src="_images/validation_57_1.png" />
 </div>
 </div>
+</div>
+<div class="section" id="latitudinal-profile-of-transport">
+<h4>Latitudinal profile of transport<a class="headerlink" href="#latitudinal-profile-of-transport" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fg</span> <span class="o">=</span> <span class="n">johnson</span><span class="o">.</span><span class="n">eucy</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">)</span>
@@ -13416,7 +13950,59 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-10.0, 10.0)
 </pre></div>
 </div>
-<img alt="_images/validation_57_1.png" src="_images/validation_57_1.png" />
+<img alt="_images/validation_59_1.png" src="_images/validation_59_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="u-longitudinal-profile-at-equator">
+<h3><span class="math notranslate nohighlight">\(u\)</span> longitudinal profile at equator<a class="headerlink" href="#u-longitudinal-profile-at-equator" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">annual</span><span class="o">.</span><span class="n">uo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">vertical</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span> <span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">360</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">)</span>
+
+<span class="n">johnson</span><span class="o">.</span><span class="n">uo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">vertical</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<div class="stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/python/xarray/xarray/plot/utils.py:624: MatplotlibDeprecationWarning: The &#39;extend&#39; parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+  cbar = fig.colorbar(primitive, **cbar_kwargs)
+</pre></div>
+</div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x2b96f203ce80&gt;
+</pre></div>
+</div>
+<img alt="_images/validation_61_2.png" src="_images/validation_61_2.png" />
+</div>
+</div>
+<p>Vertical mean velocity between 50 and 250m ; Annual mean</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">250</span><span class="p">))</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+
+
+<span class="n">plot</span><span class="p">(</span><span class="n">annual</span><span class="o">.</span><span class="n">uo</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">annual</span><span class="o">.</span><span class="n">vo</span><span class="p">,</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/validation_63_0.png" src="_images/validation_63_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -13460,7 +14046,7 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_61_0.png" src="_images/validation_61_0.png" />
+<img alt="_images/validation_67_0.png" src="_images/validation_67_0.png" />
 </div>
 </div>
 </div>
@@ -13487,7 +14073,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Argo 2013-Jan mean (black), MOM6 (red)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_63_1.png" src="_images/validation_63_1.png" />
+<img alt="_images/validation_69_1.png" src="_images/validation_69_1.png" />
 </div>
 </div>
 <p>These mixed layers look a little too deep?</p>
@@ -13510,7 +14096,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Argo 2013-Jan mean (black), Mercator IC (red)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_65_1.png" src="_images/validation_65_1.png" />
+<img alt="_images/validation_71_1.png" src="_images/validation_71_1.png" />
 </div>
 </div>
 <p>Ufff… these are bad</p>
@@ -13540,7 +14126,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.01, &#39;MOM6 - Argo (1°x1°) temperature Monthly Means&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_67_1.png" src="_images/validation_67_1.png" />
+<img alt="_images/validation_73_1.png" src="_images/validation_73_1.png" />
 </div>
 </div>
 <p>These are thermocline biases… or amy be a mixed layer depth bias</p>
@@ -13560,7 +14146,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2abdee912b90&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_69_1.png" src="_images/validation_69_1.png" />
+<img alt="_images/validation_75_1.png" src="_images/validation_75_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13587,7 +14173,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1, &#39;MOM6 - Argo monthly mean temperature&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_70_1.png" src="_images/validation_70_1.png" />
+<img alt="_images/validation_76_1.png" src="_images/validation_76_1.png" />
 </div>
 </div>
 </div>
@@ -13614,7 +14200,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.05, &#39;MOM6 MLD - MIMOC MLD climatology&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_72_1.png" src="_images/validation_72_1.png" />
+<img alt="_images/validation_78_1.png" src="_images/validation_78_1.png" />
 </div>
 </div>
 </div>
@@ -13652,7 +14238,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b4bd8401410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_77_1.png" src="_images/validation_77_1.png" />
+<img alt="_images/validation_83_1.png" src="_images/validation_83_1.png" />
 </div>
 </div>
 </div>
@@ -13671,7 +14257,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.1, &#39;Mercator SST - IC SST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_80_1.png" src="_images/validation_80_1.png" />
+<img alt="_images/validation_86_1.png" src="_images/validation_86_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13685,7 +14271,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;IC SST - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_81_1.png" src="_images/validation_81_1.png" />
+<img alt="_images/validation_87_1.png" src="_images/validation_87_1.png" />
 </div>
 </div>
 <p>Daily mean for first day has same biases w.r.t OISSST as initial condition. Makes sense</p>
@@ -13699,7 +14285,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2aded5422d50&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_83_1.png" src="_images/validation_83_1.png" />
+<img alt="_images/validation_89_1.png" src="_images/validation_89_1.png" />
 </div>
 </div>
 </div>
@@ -13722,7 +14308,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96e8179e50&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_86_1.png" src="_images/validation_86_1.png" />
+<img alt="_images/validation_92_1.png" src="_images/validation_92_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13735,7 +14321,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96e95ff110&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_87_1.png" src="_images/validation_87_1.png" />
+<img alt="_images/validation_93_1.png" src="_images/validation_93_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13748,7 +14334,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96d45acfd0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_88_1.png" src="_images/validation_88_1.png" />
+<img alt="_images/validation_94_1.png" src="_images/validation_94_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13770,7 +14356,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96d4bfe450&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_89_1.png" src="_images/validation_89_1.png" />
+<img alt="_images/validation_95_1.png" src="_images/validation_95_1.png" />
 </div>
 </div>
 </div>
@@ -13793,8 +14379,8 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Initial condition SST - Mercator 2013&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_91_1.png" src="_images/validation_91_1.png" />
-<img alt="_images/validation_91_2.png" src="_images/validation_91_2.png" />
+<img alt="_images/validation_97_1.png" src="_images/validation_97_1.png" />
+<img alt="_images/validation_97_2.png" src="_images/validation_97_2.png" />
 </div>
 </div>
 </div>
@@ -13817,7 +14403,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b9dc8a47110&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_94_1.png" src="_images/validation_94_1.png" />
+<img alt="_images/validation_100_1.png" src="_images/validation_100_1.png" />
 </div>
 </div>
 </div>
@@ -13835,7 +14421,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2b9de104a490&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_96_1.png" src="_images/validation_96_1.png" />
+<img alt="_images/validation_102_1.png" src="_images/validation_102_1.png" />
 </div>
 </div>
 </div>
@@ -13856,7 +14442,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b9ddd18d410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_98_1.png" src="_images/validation_98_1.png" />
+<img alt="_images/validation_104_1.png" src="_images/validation_104_1.png" />
 </div>
 </div>
 </div>
@@ -13895,7 +14481,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b9e42c76910&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_101_1.png" src="_images/validation_101_1.png" />
+<img alt="_images/validation_107_1.png" src="_images/validation_107_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13928,8 +14514,8 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Initial condition SST - Mercator 2013&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_104_1.png" src="_images/validation_104_1.png" />
-<img alt="_images/validation_104_2.png" src="_images/validation_104_2.png" />
+<img alt="_images/validation_110_1.png" src="_images/validation_110_1.png" />
+<img alt="_images/validation_110_2.png" src="_images/validation_110_2.png" />
 </div>
 </div>
 </div>
@@ -13967,11 +14553,11 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_107_0.png" src="_images/validation_107_0.png" />
-<img alt="_images/validation_107_1.png" src="_images/validation_107_1.png" />
-<img alt="_images/validation_107_2.png" src="_images/validation_107_2.png" />
-<img alt="_images/validation_107_3.png" src="_images/validation_107_3.png" />
-<img alt="_images/validation_107_4.png" src="_images/validation_107_4.png" />
+<img alt="_images/validation_113_0.png" src="_images/validation_113_0.png" />
+<img alt="_images/validation_113_1.png" src="_images/validation_113_1.png" />
+<img alt="_images/validation_113_2.png" src="_images/validation_113_2.png" />
+<img alt="_images/validation_113_3.png" src="_images/validation_113_3.png" />
+<img alt="_images/validation_113_4.png" src="_images/validation_113_4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14000,7 +14586,7 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_108_0.png" src="_images/validation_108_0.png" />
+<img alt="_images/validation_114_0.png" src="_images/validation_114_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14038,7 +14624,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96fe5a6ed0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_111_2.png" src="_images/validation_111_2.png" />
+<img alt="_images/validation_117_2.png" src="_images/validation_117_2.png" />
 </div>
 </div>
 </div>
@@ -14063,7 +14649,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2b96db21d550&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_113_2.png" src="_images/validation_113_2.png" />
+<img alt="_images/validation_119_2.png" src="_images/validation_119_2.png" />
 </div>
 </div>
 <div class="section" id="id9">
@@ -14099,7 +14685,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96678980d0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_116_1.png" src="_images/validation_116_1.png" />
+<img alt="_images/validation_122_1.png" src="_images/validation_122_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14486,7 +15072,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96dd092950&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_119_1.png" src="_images/validation_119_1.png" />
+<img alt="_images/validation_125_1.png" src="_images/validation_125_1.png" />
 </div>
 </div>
 </div>
@@ -14508,7 +15094,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2b24ea8ecc90&gt;]
 </pre></div>
 </div>
-<img alt="_images/validation_121_1.png" src="_images/validation_121_1.png" />
+<img alt="_images/validation_127_1.png" src="_images/validation_127_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14521,7 +15107,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b24df1537d0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_122_1.png" src="_images/validation_122_1.png" />
+<img alt="_images/validation_128_1.png" src="_images/validation_128_1.png" />
 </div>
 </div>
 </div>
