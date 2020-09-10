@@ -9155,6 +9155,11 @@ Attributes:
 <span class="n">tao_adcp</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;U_1205&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="s2">&quot;V_1206&quot;</span><span class="p">:</span> <span class="s2">&quot;v&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
     <span class="n">lat</span><span class="o">=</span><span class="mi">0</span>
 <span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">rename_like</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">uo</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;2013&quot;</span><span class="p">)</span>
+
+<span class="n">tao_adcp</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">v</span>
+<span class="n">tao_adcp</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tao_adcp</span><span class="o">.</span><span class="n">u</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">tao_adcp</span> <span class="o">=</span> <span class="n">tao_adcp</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">tao_adcp</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">interpolate_na</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">max_gap</span><span class="o">=</span><span class="s2">&quot;7D&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -12202,7 +12207,13 @@ Coordinates:
 <ol class="simple">
 <li><p>ePBL plus ocean current =0 in coupler</p></li>
 </ol>
-<p>Apparently very small differences</p>
+<p>Results:</p>
+<ol class="simple">
+<li><p>Apparently very small differences in thermocline</p></li>
+<li><p>Better MLD, better SST</p></li>
+<li><p>More energetic TIWs (closer to TAO ADCP at 110)</p></li>
+<li><p>no change in EUC</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simindex</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;epbl&quot;</span><span class="p">,</span> <span class="s2">&quot;cpl0&quot;</span><span class="p">],</span> <span class="n">dims</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">)</span>
@@ -12215,56 +12226,7 @@ Coordinates:
 <h2>TIWKE<a class="headerlink" href="#tiwke" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tao_adcp</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">u</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">v</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tao_adcp</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tao_adcp</span><span class="o">.</span><span class="n">u</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tao_adcp</span> <span class="o">=</span> <span class="n">tao_adcp</span> <span class="o">/</span> <span class="mi">100</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tao_adcp</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="n">tao_adcp</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">imag</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2b7687887400&gt;]
-</pre></div>
-</div>
-<img alt="_images/validation_57_1.png" src="_images/validation_57_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">],</span> <span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="n">simindex</span><span class="p">)</span><span class="o">.</span><span class="n">uo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
-    <span class="n">vertical</span><span class="o">=</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Zonal velocity&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/validation_58_0.png" src="_images/validation_58_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tao_adcp</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">interpolate_na</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">max_gap</span><span class="o">=</span><span class="s2">&quot;7D&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simadcp</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">],</span> <span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="n">simindex</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -12279,53 +12241,55 @@ Coordinates:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fg</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">],</span> <span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="n">simindex</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">vo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fg</span> <span class="o">=</span> <span class="n">simadcp</span><span class="o">.</span><span class="n">uo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">fg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">rename_like</span><span class="p">(</span>
-    <span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">vo</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;yq&quot;</span><span class="p">,</span> <span class="s2">&quot;yh&quot;</span><span class="p">])</span>
-<span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">reindex_like</span><span class="p">(</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">vo</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">fg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">rename_like</span><span class="p">(</span><span class="n">simadcp</span><span class="o">.</span><span class="n">uo</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;yq&quot;</span><span class="p">,</span> <span class="s2">&quot;yh&quot;</span><span class="p">]))</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">reindex_like</span><span class="p">(</span>
+    <span class="n">simadcp</span><span class="o">.</span><span class="n">uo</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
 <span class="n">fg</span><span class="o">.</span><span class="n">map_dataarray_line</span><span class="p">(</span>
     <span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Meridional velocity&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Zonal velocity&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_61_0.png" src="_images/validation_61_0.png" />
+<img alt="_images/validation_55_0.png" src="_images/validation_55_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">depth</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">]:</span>
-    <span class="n">hdl</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">dcpy</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">PlotSpectrum</span><span class="p">(</span><span class="n">tao_adcp</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">),</span> <span class="n">twoside</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">PlotSpectrum</span><span class="p">(</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">),</span> <span class="n">twoside</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">PlotSpectrum</span><span class="p">(</span><span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">),</span> <span class="n">twoside</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;depth=</span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fg</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">simadcp</span><span class="o">.</span><span class="n">vo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sim&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">tao_adcp</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">rename_like</span><span class="p">(</span>
+    <span class="n">simadcp</span><span class="o">.</span><span class="n">vo</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;yq&quot;</span><span class="p">,</span> <span class="s2">&quot;yh&quot;</span><span class="p">])</span>
+<span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">reindex_like</span><span class="p">(</span><span class="n">simadcp</span><span class="o">.</span><span class="n">vo</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fg</span><span class="o">.</span><span class="n">map_dataarray_line</span><span class="p">(</span>
+    <span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Meridional velocity&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-176-a52d18831b21&gt;:6: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
-  plt.tight_layout()
-&lt;ipython-input-176-a52d18831b21&gt;:6: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
-  plt.tight_layout()
-&lt;ipython-input-176-a52d18831b21&gt;:6: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
-  plt.tight_layout()
-&lt;ipython-input-176-a52d18831b21&gt;:6: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
-  plt.tight_layout()
+<img alt="_images/validation_56_0.png" src="_images/validation_56_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">depth</span> <span class="ow">in</span> <span class="n">simadcp</span><span class="o">.</span><span class="n">cf</span><span class="p">[</span><span class="s2">&quot;vertical&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+    <span class="n">hdl</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">dcpy</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">PlotSpectrum</span><span class="p">(</span><span class="n">tao_adcp</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">),</span> <span class="n">twoside</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+    <span class="n">dcpy</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">PlotSpectrum</span><span class="p">(</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">),</span> <span class="n">twoside</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">dcpy</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">PlotSpectrum</span><span class="p">(</span><span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">),</span> <span class="n">twoside</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;depth=</span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;TAO&quot;</span><span class="p">,</span> <span class="s2">&quot;epbl&quot;</span><span class="p">,</span> <span class="s2">&quot;cpl0&quot;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="_images/validation_62_1.png" src="_images/validation_62_1.png" />
-<img alt="_images/validation_62_2.png" src="_images/validation_62_2.png" />
-<img alt="_images/validation_62_3.png" src="_images/validation_62_3.png" />
-<img alt="_images/validation_62_4.png" src="_images/validation_62_4.png" />
 </div>
 </div>
 </div>
@@ -12346,7 +12310,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b754341ab80&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_64_1.png" src="_images/validation_64_1.png" />
+<img alt="_images/validation_59_1.png" src="_images/validation_59_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12367,7 +12331,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b754b79eac0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_65_1.png" src="_images/validation_65_1.png" />
+<img alt="_images/validation_60_1.png" src="_images/validation_60_1.png" />
 </div>
 </div>
 </div>
@@ -12404,7 +12368,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1, &#39;Annual mean SST bias: MOM6 - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_67_2.png" src="_images/validation_67_2.png" />
+<img alt="_images/validation_62_2.png" src="_images/validation_62_2.png" />
 </div>
 </div>
 </div>
@@ -12427,7 +12391,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;epbl - cpl0&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_69_1.png" src="_images/validation_69_1.png" />
+<img alt="_images/validation_64_1.png" src="_images/validation_64_1.png" />
 </div>
 </div>
 </div>
@@ -12458,7 +12422,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2aac978a9280&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_71_2.png" src="_images/validation_71_2.png" />
+<img alt="_images/validation_66_2.png" src="_images/validation_66_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12475,7 +12439,7 @@ Coordinates:
   primitive = ax.pcolormesh(x, y, z, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/validation_72_1.png" src="_images/validation_72_1.png" />
+<img alt="_images/validation_67_1.png" src="_images/validation_67_1.png" />
 </div>
 </div>
 </div>
@@ -12495,7 +12459,7 @@ Coordinates:
   primitive = ax.pcolormesh(x, y, z, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/validation_74_1.png" src="_images/validation_74_1.png" />
+<img alt="_images/validation_69_1.png" src="_images/validation_69_1.png" />
 </div>
 </div>
 <div class="section" id="subsurface-bias-argo">
@@ -12523,12 +12487,12 @@ Coordinates:
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_76_1.png" src="_images/validation_76_1.png" />
-<img alt="_images/validation_76_2.png" src="_images/validation_76_2.png" />
-<img alt="_images/validation_76_3.png" src="_images/validation_76_3.png" />
-<img alt="_images/validation_76_4.png" src="_images/validation_76_4.png" />
-<img alt="_images/validation_76_5.png" src="_images/validation_76_5.png" />
-<img alt="_images/validation_76_6.png" src="_images/validation_76_6.png" />
+<img alt="_images/validation_71_1.png" src="_images/validation_71_1.png" />
+<img alt="_images/validation_71_2.png" src="_images/validation_71_2.png" />
+<img alt="_images/validation_71_3.png" src="_images/validation_71_3.png" />
+<img alt="_images/validation_71_4.png" src="_images/validation_71_4.png" />
+<img alt="_images/validation_71_5.png" src="_images/validation_71_5.png" />
+<img alt="_images/validation_71_6.png" src="_images/validation_71_6.png" />
 </div>
 </div>
 </div>
@@ -12577,8 +12541,8 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2aac7ec92220&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_78_2.png" src="_images/validation_78_2.png" />
-<img alt="_images/validation_78_3.png" src="_images/validation_78_3.png" />
+<img alt="_images/validation_73_2.png" src="_images/validation_73_2.png" />
+<img alt="_images/validation_73_3.png" src="_images/validation_73_3.png" />
 </div>
 </div>
 </div>
@@ -12742,7 +12706,7 @@ Coordinates:
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="_images/validation_80_2.png" src="_images/validation_80_2.png" />
+<img alt="_images/validation_75_2.png" src="_images/validation_75_2.png" />
 </div>
 </div>
 </div>
@@ -12826,7 +12790,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2ab32f11a410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_87_1.png" src="_images/validation_87_1.png" />
+<img alt="_images/validation_82_1.png" src="_images/validation_82_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12848,7 +12812,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2adebd59c550&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_88_1.png" src="_images/validation_88_1.png" />
+<img alt="_images/validation_83_1.png" src="_images/validation_83_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12869,7 +12833,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_89_0.png" src="_images/validation_89_0.png" />
+<img alt="_images/validation_84_0.png" src="_images/validation_84_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12887,7 +12851,7 @@ Coordinates:
   primitive = ax.contour(x, y, z, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/validation_90_1.png" src="_images/validation_90_1.png" />
+<img alt="_images/validation_85_1.png" src="_images/validation_85_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12901,7 +12865,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_91_0.png" src="_images/validation_91_0.png" />
+<img alt="_images/validation_86_0.png" src="_images/validation_86_0.png" />
 </div>
 </div>
 </div>
@@ -12942,7 +12906,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean SST bias: MOM6 - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_94_1.png" src="_images/validation_94_1.png" />
+<img alt="_images/validation_89_1.png" src="_images/validation_89_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12956,7 +12920,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_95_0.png" src="_images/validation_95_0.png" />
+<img alt="_images/validation_90_0.png" src="_images/validation_90_0.png" />
 </div>
 </div>
 </div>
@@ -12977,8 +12941,8 @@ Coordinates:
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_98_1.png" src="_images/validation_98_1.png" />
-<img alt="_images/validation_98_2.png" src="_images/validation_98_2.png" />
+<img alt="_images/validation_93_1.png" src="_images/validation_93_1.png" />
+<img alt="_images/validation_93_2.png" src="_images/validation_93_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12994,8 +12958,8 @@ Coordinates:
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_99_1.png" src="_images/validation_99_1.png" />
-<img alt="_images/validation_99_2.png" src="_images/validation_99_2.png" />
+<img alt="_images/validation_94_1.png" src="_images/validation_94_1.png" />
+<img alt="_images/validation_94_2.png" src="_images/validation_94_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13011,8 +12975,8 @@ Coordinates:
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_100_1.png" src="_images/validation_100_1.png" />
-<img alt="_images/validation_100_2.png" src="_images/validation_100_2.png" />
+<img alt="_images/validation_95_1.png" src="_images/validation_95_1.png" />
+<img alt="_images/validation_95_2.png" src="_images/validation_95_2.png" />
 </div>
 </div>
 </div>
@@ -13044,7 +13008,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean T&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_102_2.png" src="_images/validation_102_2.png" />
+<img alt="_images/validation_97_2.png" src="_images/validation_97_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13065,7 +13029,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2af44427ceb0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_103_2.png" src="_images/validation_103_2.png" />
+<img alt="_images/validation_98_2.png" src="_images/validation_98_2.png" />
 </div>
 </div>
 </div>
@@ -13108,8 +13072,8 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean $D_{20}$: MOM6 - Argo&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_105_2.png" src="_images/validation_105_2.png" />
-<img alt="_images/validation_105_3.png" src="_images/validation_105_3.png" />
+<img alt="_images/validation_100_2.png" src="_images/validation_100_2.png" />
+<img alt="_images/validation_100_3.png" src="_images/validation_100_3.png" />
 </div>
 </div>
 <p>Not sure if this is useful</p>
@@ -13133,7 +13097,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.01, &#39;$D_{20}$: MOM6 - Argo&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_107_2.png" src="_images/validation_107_2.png" />
+<img alt="_images/validation_102_2.png" src="_images/validation_102_2.png" />
 </div>
 </div>
 </div>
@@ -13149,7 +13113,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b079f913eb0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_109_1.png" src="_images/validation_109_1.png" />
+<img alt="_images/validation_104_1.png" src="_images/validation_104_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13163,7 +13127,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b079bc337c0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_110_1.png" src="_images/validation_110_1.png" />
+<img alt="_images/validation_105_1.png" src="_images/validation_105_1.png" />
 </div>
 </div>
 </div>
@@ -13187,7 +13151,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean bias in MLD (MOM6 - MIMOC)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_112_1.png" src="_images/validation_112_1.png" />
+<img alt="_images/validation_107_1.png" src="_images/validation_107_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13208,7 +13172,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.05, &#39;MOM6 MLD - MIMOC MLD climatology&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_113_2.png" src="_images/validation_113_2.png" />
+<img alt="_images/validation_108_2.png" src="_images/validation_108_2.png" />
 </div>
 </div>
 </div>
@@ -13231,7 +13195,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(600.0, 0.0)
 </pre></div>
 </div>
-<img alt="_images/validation_116_1.png" src="_images/validation_116_1.png" />
+<img alt="_images/validation_111_1.png" src="_images/validation_111_1.png" />
 </div>
 </div>
 </div>
@@ -13286,7 +13250,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x2b96f203ce80&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_120_2.png" src="_images/validation_120_2.png" />
+<img alt="_images/validation_115_2.png" src="_images/validation_115_2.png" />
 </div>
 </div>
 <p>Vertical mean velocity between 50 and 250m ; Annual mean</p>
@@ -13307,7 +13271,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_122_0.png" src="_images/validation_122_0.png" />
+<img alt="_images/validation_117_0.png" src="_images/validation_117_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -13351,7 +13315,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_126_0.png" src="_images/validation_126_0.png" />
+<img alt="_images/validation_121_0.png" src="_images/validation_121_0.png" />
 </div>
 </div>
 </div>
@@ -13378,7 +13342,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Argo 2013-Jan mean (black), MOM6 (red)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_128_1.png" src="_images/validation_128_1.png" />
+<img alt="_images/validation_123_1.png" src="_images/validation_123_1.png" />
 </div>
 </div>
 <p>These mixed layers look a little too deep?</p>
@@ -13401,7 +13365,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Argo 2013-Jan mean (black), Mercator IC (red)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_130_1.png" src="_images/validation_130_1.png" />
+<img alt="_images/validation_125_1.png" src="_images/validation_125_1.png" />
 </div>
 </div>
 <p>Ufff… these are bad</p>
@@ -13431,7 +13395,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.01, &#39;MOM6 - Argo (1°x1°) temperature Monthly Means&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_132_1.png" src="_images/validation_132_1.png" />
+<img alt="_images/validation_127_1.png" src="_images/validation_127_1.png" />
 </div>
 </div>
 <p>These are thermocline biases… or amy be a mixed layer depth bias</p>
@@ -13451,7 +13415,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2abdee912b90&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_134_1.png" src="_images/validation_134_1.png" />
+<img alt="_images/validation_129_1.png" src="_images/validation_129_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13478,7 +13442,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1, &#39;MOM6 - Argo monthly mean temperature&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_135_1.png" src="_images/validation_135_1.png" />
+<img alt="_images/validation_130_1.png" src="_images/validation_130_1.png" />
 </div>
 </div>
 </div>
@@ -13505,7 +13469,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.05, &#39;MOM6 MLD - MIMOC MLD climatology&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_137_1.png" src="_images/validation_137_1.png" />
+<img alt="_images/validation_132_1.png" src="_images/validation_132_1.png" />
 </div>
 </div>
 </div>
@@ -13543,7 +13507,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b4bd8401410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_142_1.png" src="_images/validation_142_1.png" />
+<img alt="_images/validation_137_1.png" src="_images/validation_137_1.png" />
 </div>
 </div>
 </div>
@@ -13562,7 +13526,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.1, &#39;Mercator SST - IC SST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_145_1.png" src="_images/validation_145_1.png" />
+<img alt="_images/validation_140_1.png" src="_images/validation_140_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13576,7 +13540,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;IC SST - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_146_1.png" src="_images/validation_146_1.png" />
+<img alt="_images/validation_141_1.png" src="_images/validation_141_1.png" />
 </div>
 </div>
 <p>Daily mean for first day has same biases w.r.t OISSST as initial condition. Makes sense</p>
@@ -13590,7 +13554,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2aded5422d50&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_148_1.png" src="_images/validation_148_1.png" />
+<img alt="_images/validation_143_1.png" src="_images/validation_143_1.png" />
 </div>
 </div>
 </div>
@@ -13613,7 +13577,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96e8179e50&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_151_1.png" src="_images/validation_151_1.png" />
+<img alt="_images/validation_146_1.png" src="_images/validation_146_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13626,7 +13590,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96e95ff110&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_152_1.png" src="_images/validation_152_1.png" />
+<img alt="_images/validation_147_1.png" src="_images/validation_147_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13639,7 +13603,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96d45acfd0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_153_1.png" src="_images/validation_153_1.png" />
+<img alt="_images/validation_148_1.png" src="_images/validation_148_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13661,7 +13625,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96d4bfe450&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_154_1.png" src="_images/validation_154_1.png" />
+<img alt="_images/validation_149_1.png" src="_images/validation_149_1.png" />
 </div>
 </div>
 </div>
@@ -13684,8 +13648,8 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Initial condition SST - Mercator 2013&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_156_1.png" src="_images/validation_156_1.png" />
-<img alt="_images/validation_156_2.png" src="_images/validation_156_2.png" />
+<img alt="_images/validation_151_1.png" src="_images/validation_151_1.png" />
+<img alt="_images/validation_151_2.png" src="_images/validation_151_2.png" />
 </div>
 </div>
 </div>
@@ -13708,7 +13672,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b9dc8a47110&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_159_1.png" src="_images/validation_159_1.png" />
+<img alt="_images/validation_154_1.png" src="_images/validation_154_1.png" />
 </div>
 </div>
 </div>
@@ -13726,7 +13690,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2b9de104a490&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_161_1.png" src="_images/validation_161_1.png" />
+<img alt="_images/validation_156_1.png" src="_images/validation_156_1.png" />
 </div>
 </div>
 </div>
@@ -13747,7 +13711,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b9ddd18d410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_163_1.png" src="_images/validation_163_1.png" />
+<img alt="_images/validation_158_1.png" src="_images/validation_158_1.png" />
 </div>
 </div>
 </div>
@@ -13786,7 +13750,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b9e42c76910&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_166_1.png" src="_images/validation_166_1.png" />
+<img alt="_images/validation_161_1.png" src="_images/validation_161_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13819,8 +13783,8 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Initial condition SST - Mercator 2013&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_169_1.png" src="_images/validation_169_1.png" />
-<img alt="_images/validation_169_2.png" src="_images/validation_169_2.png" />
+<img alt="_images/validation_164_1.png" src="_images/validation_164_1.png" />
+<img alt="_images/validation_164_2.png" src="_images/validation_164_2.png" />
 </div>
 </div>
 </div>
@@ -13858,11 +13822,11 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_172_0.png" src="_images/validation_172_0.png" />
-<img alt="_images/validation_172_1.png" src="_images/validation_172_1.png" />
-<img alt="_images/validation_172_2.png" src="_images/validation_172_2.png" />
-<img alt="_images/validation_172_3.png" src="_images/validation_172_3.png" />
-<img alt="_images/validation_172_4.png" src="_images/validation_172_4.png" />
+<img alt="_images/validation_167_0.png" src="_images/validation_167_0.png" />
+<img alt="_images/validation_167_1.png" src="_images/validation_167_1.png" />
+<img alt="_images/validation_167_2.png" src="_images/validation_167_2.png" />
+<img alt="_images/validation_167_3.png" src="_images/validation_167_3.png" />
+<img alt="_images/validation_167_4.png" src="_images/validation_167_4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13891,7 +13855,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_173_0.png" src="_images/validation_173_0.png" />
+<img alt="_images/validation_168_0.png" src="_images/validation_168_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13927,7 +13891,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96fe5a6ed0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_176_2.png" src="_images/validation_176_2.png" />
+<img alt="_images/validation_171_2.png" src="_images/validation_171_2.png" />
 </div>
 </div>
 </div>
@@ -13950,7 +13914,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2b96db21d550&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_178_2.png" src="_images/validation_178_2.png" />
+<img alt="_images/validation_173_2.png" src="_images/validation_173_2.png" />
 </div>
 </div>
 <div class="section" id="id14">
@@ -13986,7 +13950,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96678980d0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_181_1.png" src="_images/validation_181_1.png" />
+<img alt="_images/validation_176_1.png" src="_images/validation_176_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14373,7 +14337,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96dd092950&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_184_1.png" src="_images/validation_184_1.png" />
+<img alt="_images/validation_179_1.png" src="_images/validation_179_1.png" />
 </div>
 </div>
 </div>
@@ -14395,7 +14359,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2b24ea8ecc90&gt;]
 </pre></div>
 </div>
-<img alt="_images/validation_186_1.png" src="_images/validation_186_1.png" />
+<img alt="_images/validation_181_1.png" src="_images/validation_181_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14408,7 +14372,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b24df1537d0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_187_1.png" src="_images/validation_187_1.png" />
+<img alt="_images/validation_182_1.png" src="_images/validation_182_1.png" />
 </div>
 </div>
 </div>
@@ -14452,7 +14416,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2aac7f371dc0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_192_1.png" src="_images/validation_192_1.png" />
+<img alt="_images/validation_187_1.png" src="_images/validation_187_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -15065,7 +15029,7 @@ Attributes:
 -66.25
 </pre></div>
 </div>
-<img alt="_images/validation_197_1.png" src="_images/validation_197_1.png" />
+<img alt="_images/validation_192_1.png" src="_images/validation_192_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -15442,7 +15406,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2aac9c084a00&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_199_1.png" src="_images/validation_199_1.png" />
+<img alt="_images/validation_194_1.png" src="_images/validation_194_1.png" />
 </div>
 </div>
 </div>
