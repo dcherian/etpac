@@ -11300,7 +11300,7 @@ Attributes:
     <span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
     <span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 <span class="p">)</span>
-<span class="n">argo</span> <span class="o">=</span> <span class="n">argo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">rename_like</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">thetao</span><span class="p">)</span>  <span class="c1"># interp_like(ds.thetao.isel(time=1))</span>
+<span class="n">argo</span> <span class="o">=</span> <span class="n">argo</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">rename_like</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">thetao</span><span class="p">)</span>  <span class="c1"># interp_like(ds.thetao.isel(time=1))</span>
 <span class="n">argo</span><span class="p">[</span><span class="s2">&quot;xh&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">monthly1deg</span><span class="o">.</span><span class="n">xh</span>
 <span class="n">argo</span><span class="p">[</span><span class="s2">&quot;yh&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">monthly1deg</span><span class="o">.</span><span class="n">yh</span>
 <span class="n">argo</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span>
@@ -11674,33 +11674,33 @@ dl.xr-attrs {
 Dimensions:  (time: 12, xh: 50, yh: 45, zl: 58)
 Coordinates:
   * xh       (xh) float64 235.5 236.5 237.5 238.5 ... 281.5 282.5 283.5 284.5
-  * yh       (yh) float64 -14.5 -13.5 -12.5 -11.5 -10.5 ... 26.5 27.5 28.5 29.5
-  * time     (time) datetime64[ns] 2013-01-31 2013-02-28 ... 2013-12-31
   * zl       (zl) float32 2.5 10.0 20.0 30.0 ... 1700.0 1800.0 1900.0 1975.0
+  * time     (time) datetime64[ns] 2013-01-31 2013-02-28 ... 2013-12-31
+  * yh       (yh) float64 -14.5 -13.5 -12.5 -11.5 -10.5 ... 26.5 27.5 28.5 29.5
 Data variables:
     thetao   (time, zl, yh, xh) float32 27.605001 27.633 ... 3.6720002 3.752
     so       (time, zl, yh, xh) float32 36.275 36.309002 ... 34.972 34.982
-    D20      (time, yh, xh) float64 208.2 206.8 205.2 ... 200.9 179.7 171.7</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-bd2a1e7c-c091-40b5-9831-64b2e68290f0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-bd2a1e7c-c091-40b5-9831-64b2e68290f0' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 12</li><li><span class='xr-has-index'>xh</span>: 50</li><li><span class='xr-has-index'>yh</span>: 45</li><li><span class='xr-has-index'>zl</span>: 58</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-9362fed8-4a2b-4711-bf39-82481d802752' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9362fed8-4a2b-4711-bf39-82481d802752' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>xh</span></div><div class='xr-var-dims'>(xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>235.5 236.5 237.5 ... 283.5 284.5</div><input id='attrs-e0e1d57f-ed48-4273-aa8b-67e7d4889a56' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e0e1d57f-ed48-4273-aa8b-67e7d4889a56' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e86ae07a-3e27-4336-9055-0f0322c49e86' class='xr-var-data-in' type='checkbox'><label for='data-e86ae07a-3e27-4336-9055-0f0322c49e86' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>h point nominal longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>cartesian_axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([235.5, 236.5, 237.5, 238.5, 239.5, 240.5, 241.5, 242.5, 243.5, 244.5,
+    D20      (time, yh, xh) float64 208.2 206.8 205.2 ... 200.9 179.7 171.7</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-ea215125-13d8-4bb6-b548-253abb3bf74b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ea215125-13d8-4bb6-b548-253abb3bf74b' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 12</li><li><span class='xr-has-index'>xh</span>: 50</li><li><span class='xr-has-index'>yh</span>: 45</li><li><span class='xr-has-index'>zl</span>: 58</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-0a7d774f-f40a-447b-8243-e6b76da3addb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0a7d774f-f40a-447b-8243-e6b76da3addb' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>xh</span></div><div class='xr-var-dims'>(xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>235.5 236.5 237.5 ... 283.5 284.5</div><input id='attrs-08f312de-5105-40a8-be1c-a540f1bee9ff' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-08f312de-5105-40a8-be1c-a540f1bee9ff' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-02c64407-2e43-4dc9-af4d-f28f8082dbd7' class='xr-var-data-in' type='checkbox'><label for='data-02c64407-2e43-4dc9-af4d-f28f8082dbd7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cartesian_axis :</span></dt><dd>X</dd><dt><span>long_name :</span></dt><dd>h point nominal longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([235.5, 236.5, 237.5, 238.5, 239.5, 240.5, 241.5, 242.5, 243.5, 244.5,
        245.5, 246.5, 247.5, 248.5, 249.5, 250.5, 251.5, 252.5, 253.5, 254.5,
        255.5, 256.5, 257.5, 258.5, 259.5, 260.5, 261.5, 262.5, 263.5, 264.5,
        265.5, 266.5, 267.5, 268.5, 269.5, 270.5, 271.5, 272.5, 273.5, 274.5,
-       275.5, 276.5, 277.5, 278.5, 279.5, 280.5, 281.5, 282.5, 283.5, 284.5])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>yh</span></div><div class='xr-var-dims'>(yh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-14.5 -13.5 -12.5 ... 28.5 29.5</div><input id='attrs-3edbd041-b096-49fd-9a3e-60048228001d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3edbd041-b096-49fd-9a3e-60048228001d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d67b371e-9051-4544-83aa-0894678fd740' class='xr-var-data-in' type='checkbox'><label for='data-d67b371e-9051-4544-83aa-0894678fd740' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>h point nominal latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>cartesian_axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-14.5, -13.5, -12.5, -11.5, -10.5,  -9.5,  -8.5,  -7.5,  -6.5,  -5.5,
-        -4.5,  -3.5,  -2.5,  -1.5,  -0.5,   0.5,   1.5,   2.5,   3.5,   4.5,
-         5.5,   6.5,   7.5,   8.5,   9.5,  10.5,  11.5,  12.5,  13.5,  14.5,
-        15.5,  16.5,  17.5,  18.5,  19.5,  20.5,  21.5,  22.5,  23.5,  24.5,
-        25.5,  26.5,  27.5,  28.5,  29.5])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2013-01-31 ... 2013-12-31</div><input id='attrs-316ac344-ce57-454f-9e94-0b799b88b086' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-316ac344-ce57-454f-9e94-0b799b88b086' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-afb648ee-25e6-4448-9e78-c2a4796fda88' class='xr-var-data-in' type='checkbox'><label for='data-afb648ee-25e6-4448-9e78-c2a4796fda88' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2013-01-31T00:00:00.000000000&#x27;, &#x27;2013-02-28T00:00:00.000000000&#x27;,
-       &#x27;2013-03-31T00:00:00.000000000&#x27;, &#x27;2013-04-30T00:00:00.000000000&#x27;,
-       &#x27;2013-05-31T00:00:00.000000000&#x27;, &#x27;2013-06-30T00:00:00.000000000&#x27;,
-       &#x27;2013-07-31T00:00:00.000000000&#x27;, &#x27;2013-08-31T00:00:00.000000000&#x27;,
-       &#x27;2013-09-30T00:00:00.000000000&#x27;, &#x27;2013-10-31T00:00:00.000000000&#x27;,
-       &#x27;2013-11-30T00:00:00.000000000&#x27;, &#x27;2013-12-31T00:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>zl</span></div><div class='xr-var-dims'>(zl)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>2.5 10.0 20.0 ... 1900.0 1975.0</div><input id='attrs-c0a710ad-165d-4586-9ebf-d836f821feaa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c0a710ad-165d-4586-9ebf-d836f821feaa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-be7c37aa-8015-47a8-a469-65135fbe2ef4' class='xr-var-data-in' type='checkbox'><label for='data-be7c37aa-8015-47a8-a469-65135fbe2ef4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>dbar</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>point_spacing :</span></dt><dd>uneven</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([   2.5,   10. ,   20. ,   30. ,   40. ,   50. ,   60. ,   70. ,   80. ,
+       275.5, 276.5, 277.5, 278.5, 279.5, 280.5, 281.5, 282.5, 283.5, 284.5])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>zl</span></div><div class='xr-var-dims'>(zl)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>2.5 10.0 20.0 ... 1900.0 1975.0</div><input id='attrs-f1c00f07-98cd-4388-910b-217b22450fd2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f1c00f07-98cd-4388-910b-217b22450fd2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cefdee52-c177-47ea-b95a-316ad7b287a0' class='xr-var-data-in' type='checkbox'><label for='data-cefdee52-c177-47ea-b95a-316ad7b287a0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>dbar</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>point_spacing :</span></dt><dd>uneven</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([   2.5,   10. ,   20. ,   30. ,   40. ,   50. ,   60. ,   70. ,   80. ,
          90. ,  100. ,  110. ,  120. ,  130. ,  140. ,  150. ,  160. ,  170. ,
         182.5,  200. ,  220. ,  240. ,  260. ,  280. ,  300. ,  320. ,  340. ,
         360. ,  380. ,  400. ,  420. ,  440. ,  462.5,  500. ,  550. ,  600. ,
         650. ,  700. ,  750. ,  800. ,  850. ,  900. ,  950. , 1000. , 1050. ,
        1100. , 1150. , 1200. , 1250. , 1300. , 1350. , 1412.5, 1500. , 1600. ,
-       1700. , 1800. , 1900. , 1975. ], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fad60f39-d4fe-4132-b2c7-72101cc16ed0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fad60f39-d4fe-4132-b2c7-72101cc16ed0' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>thetao</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>27.605001 27.633 ... 3.752</div><input id='attrs-ef372dda-a178-4a0d-b921-b2182ff62311' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ef372dda-a178-4a0d-b921-b2182ff62311' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9d04c7fc-1f67-4e95-b90f-94958e3933b3' class='xr-var-data-in' type='checkbox'><label for='data-9d04c7fc-1f67-4e95-b90f-94958e3933b3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degree celcius (ITS-90)</dd><dt><span>long_name :</span></dt><dd>ARGO TEMPERATURE ANOMALY defined by Jan 2004 - Dec 2018 (15.0 year) RG CLIMATOLOGY</dd><dt><span>standard_name :</span></dt><dd>sea_water_potential_temperature</dd></dl></div><div class='xr-var-data'><pre>array([[[[27.605001 , 27.633    , 27.683    , ..., 22.57     ,
+       1700. , 1800. , 1900. , 1975. ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2013-01-31 ... 2013-12-31</div><input id='attrs-efef9969-1001-46c2-95db-67f9043ce64d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-efef9969-1001-46c2-95db-67f9043ce64d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-17d9777f-93af-409e-81fd-16220896d598' class='xr-var-data-in' type='checkbox'><label for='data-17d9777f-93af-409e-81fd-16220896d598' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2013-01-31T00:00:00.000000000&#x27;, &#x27;2013-02-28T00:00:00.000000000&#x27;,
+       &#x27;2013-03-31T00:00:00.000000000&#x27;, &#x27;2013-04-30T00:00:00.000000000&#x27;,
+       &#x27;2013-05-31T00:00:00.000000000&#x27;, &#x27;2013-06-30T00:00:00.000000000&#x27;,
+       &#x27;2013-07-31T00:00:00.000000000&#x27;, &#x27;2013-08-31T00:00:00.000000000&#x27;,
+       &#x27;2013-09-30T00:00:00.000000000&#x27;, &#x27;2013-10-31T00:00:00.000000000&#x27;,
+       &#x27;2013-11-30T00:00:00.000000000&#x27;, &#x27;2013-12-31T00:00:00.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>yh</span></div><div class='xr-var-dims'>(yh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-14.5 -13.5 -12.5 ... 28.5 29.5</div><input id='attrs-aea320e5-eeb7-4a95-90ab-1cc20d70cab5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-aea320e5-eeb7-4a95-90ab-1cc20d70cab5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7d0f41e4-2a40-49fd-b194-297b07d573eb' class='xr-var-data-in' type='checkbox'><label for='data-7d0f41e4-2a40-49fd-b194-297b07d573eb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>cartesian_axis :</span></dt><dd>Y</dd><dt><span>long_name :</span></dt><dd>h point nominal latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([-14.5, -13.5, -12.5, -11.5, -10.5,  -9.5,  -8.5,  -7.5,  -6.5,  -5.5,
+        -4.5,  -3.5,  -2.5,  -1.5,  -0.5,   0.5,   1.5,   2.5,   3.5,   4.5,
+         5.5,   6.5,   7.5,   8.5,   9.5,  10.5,  11.5,  12.5,  13.5,  14.5,
+        15.5,  16.5,  17.5,  18.5,  19.5,  20.5,  21.5,  22.5,  23.5,  24.5,
+        25.5,  26.5,  27.5,  28.5,  29.5])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5be1e7ae-2af6-4fef-a00a-96e2fd78c7b3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5be1e7ae-2af6-4fef-a00a-96e2fd78c7b3' class='xr-section-summary' >Data variables: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>thetao</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>27.605001 27.633 ... 3.752</div><input id='attrs-622ca639-a2c4-4f41-8e32-eda8dcf903da' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-622ca639-a2c4-4f41-8e32-eda8dcf903da' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4caf9452-e425-4ba1-a11d-a143bef505f1' class='xr-var-data-in' type='checkbox'><label for='data-4caf9452-e425-4ba1-a11d-a143bef505f1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degree celcius (ITS-90)</dd><dt><span>long_name :</span></dt><dd>ARGO TEMPERATURE ANOMALY defined by Jan 2004 - Dec 2018 (15.0 year) RG CLIMATOLOGY</dd><dt><span>standard_name :</span></dt><dd>sea_water_potential_temperature</dd></dl></div><div class='xr-var-data'><pre>array([[[[27.605001 , 27.633    , 27.683    , ..., 22.57     ,
           22.050999 ,        nan],
          [27.754    , 27.772    , 27.657    , ..., 22.32     ,
                  nan,        nan],
@@ -11740,7 +11740,7 @@ Data variables:
          [ 2.1690001,  2.159    ,  2.151    , ...,  3.6999998,
            3.662    ,  3.69     ],
          [ 2.169    ,  2.158    ,  2.145    , ...,  3.6290002,
-           3.6720002,  3.752    ]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>so</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>36.275 36.309002 ... 34.972 34.982</div><input id='attrs-64de6129-f7c1-4968-9cac-a44fabe2d6aa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-64de6129-f7c1-4968-9cac-a44fabe2d6aa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-78a5ef6a-6155-40ca-a1ea-b93a03f79d71' class='xr-var-data-in' type='checkbox'><label for='data-78a5ef6a-6155-40ca-a1ea-b93a03f79d71' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>Practical Salinity Scale 78</dd><dt><span>long_name :</span></dt><dd>ARGO SALINITY ANOMALY defined by Jan 2004 - Dec 2018 (15.0 year) RG CLIMATOLOGY</dd><dt><span>standard_name :</span></dt><dd>sea_water_salinity</dd></dl></div><div class='xr-var-data'><pre>array([[[[36.275   , 36.309002, 36.345   , ..., 35.167   , 35.113003,
+           3.6720002,  3.752    ]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>so</span></div><div class='xr-var-dims'>(time, zl, yh, xh)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>36.275 36.309002 ... 34.972 34.982</div><input id='attrs-2c089dd8-78a9-43f7-921e-e5aadb213958' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2c089dd8-78a9-43f7-921e-e5aadb213958' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d1b3dbe4-5942-4186-876c-b09585d0df44' class='xr-var-data-in' type='checkbox'><label for='data-d1b3dbe4-5942-4186-876c-b09585d0df44' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>Practical Salinity Scale 78</dd><dt><span>long_name :</span></dt><dd>ARGO SALINITY ANOMALY defined by Jan 2004 - Dec 2018 (15.0 year) RG CLIMATOLOGY</dd><dt><span>standard_name :</span></dt><dd>sea_water_salinity</dd></dl></div><div class='xr-var-data'><pre>array([[[[36.275   , 36.309002, 36.345   , ..., 35.167   , 35.113003,
                 nan],
          [36.131   , 36.182   , 36.212   , ..., 35.136997,       nan,
                 nan],
@@ -11780,7 +11780,7 @@ Data variables:
          [34.624   , 34.621998, 34.621   , ..., 34.969997, 34.97    ,
           34.975002],
          [34.619   , 34.618   , 34.619   , ..., 34.964   , 34.972   ,
-          34.982   ]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>D20</span></div><div class='xr-var-dims'>(time, yh, xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>208.2 206.8 205.2 ... 179.7 171.7</div><input id='attrs-273d5527-1287-4f53-9ad0-4337156aa23a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-273d5527-1287-4f53-9ad0-4337156aa23a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5440d868-5dba-4f25-a64a-69c0130b48b2' class='xr-var-data-in' type='checkbox'><label for='data-5440d868-5dba-4f25-a64a-69c0130b48b2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[208.2101561 , 206.76299158, 205.18804118, ...,  23.54390478,
+          34.982   ]]]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>D20</span></div><div class='xr-var-dims'>(time, yh, xh)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>208.2 206.8 205.2 ... 179.7 171.7</div><input id='attrs-e9739277-4e7f-4ab2-9b28-2d5032308fc6' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e9739277-4e7f-4ab2-9b28-2d5032308fc6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ac0af2a4-7e5a-4207-a612-95fdf0951748' class='xr-var-data-in' type='checkbox'><label for='data-ac0af2a4-7e5a-4207-a612-95fdf0951748' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([[[208.2101561 , 206.76299158, 205.18804118, ...,  23.54390478,
           19.35318582,          nan],
         [196.26660813, 198.07764266, 196.51547261, ...,  21.00326574,
                   nan,          nan],
@@ -11820,7 +11820,7 @@ Data variables:
         [         nan,          nan,          nan, ..., 210.60955393,
          195.04360799, 176.70325985],
         [         nan,          nan,          nan, ..., 200.90719466,
-         179.67602377, 171.68088541]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a785ea9d-2952-4f0f-ba1e-a63e607e48ed' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a785ea9d-2952-4f0f-ba1e-a63e607e48ed' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+         179.67602377, 171.68088541]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-35cdb99c-aec7-413c-80c7-2ff1c7220fd0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-35cdb99c-aec7-413c-80c7-2ff1c7220fd0' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 </div>
@@ -12249,7 +12249,7 @@ Coordinates:
 <span class="n">fg</span><span class="o">.</span><span class="n">map_dataarray_line</span><span class="p">(</span>
     <span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Zonal velocity&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Zonal velocity [TAO ADCP in black]&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -12270,7 +12270,7 @@ Coordinates:
 <span class="n">fg</span><span class="o">.</span><span class="n">map_dataarray_line</span><span class="p">(</span>
     <span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Meridional velocity&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Meridional velocity [TAO ADCP in black]&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -12290,6 +12290,25 @@ Coordinates:
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-194-62018cf6e10c&gt;:7: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
+  plt.tight_layout()
+&lt;ipython-input-194-62018cf6e10c&gt;:7: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
+  plt.tight_layout()
+&lt;ipython-input-194-62018cf6e10c&gt;:7: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
+  plt.tight_layout()
+&lt;ipython-input-194-62018cf6e10c&gt;:7: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
+  plt.tight_layout()
+&lt;ipython-input-194-62018cf6e10c&gt;:7: UserWarning: This figure was using constrained_layout==True, but that is incompatible with subplots_adjust and or tight_layout: setting constrained_layout==False. 
+  plt.tight_layout()
+</pre></div>
+</div>
+<img alt="_images/validation_57_1.png" src="_images/validation_57_1.png" />
+<img alt="_images/validation_57_2.png" src="_images/validation_57_2.png" />
+<img alt="_images/validation_57_3.png" src="_images/validation_57_3.png" />
+<img alt="_images/validation_57_4.png" src="_images/validation_57_4.png" />
+<img alt="_images/validation_57_5.png" src="_images/validation_57_5.png" />
 </div>
 </div>
 </div>
@@ -12442,26 +12461,6 @@ Coordinates:
 <img alt="_images/validation_67_1.png" src="_images/validation_67_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="epbl-vs-cpl0-d20">
-<h2>epbl vs cpl0 : D20<a class="headerlink" href="#epbl-vs-cpl0-d20" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;annual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">D20</span> <span class="o">-</span> <span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;annual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">D20</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
-<span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">annotate_stats</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">data</span><span class="p">)</span>
-<span class="n">plot_costa_rica_dome_extent</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
-  primitive = ax.pcolormesh(x, y, z, **kwargs)
-</pre></div>
-</div>
-<img alt="_images/validation_69_1.png" src="_images/validation_69_1.png" />
-</div>
-</div>
 <div class="section" id="subsurface-bias-argo">
 <h3>Subsurface bias: Argo<a class="headerlink" href="#subsurface-bias-argo" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -12487,12 +12486,12 @@ Coordinates:
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_71_1.png" src="_images/validation_71_1.png" />
-<img alt="_images/validation_71_2.png" src="_images/validation_71_2.png" />
-<img alt="_images/validation_71_3.png" src="_images/validation_71_3.png" />
-<img alt="_images/validation_71_4.png" src="_images/validation_71_4.png" />
-<img alt="_images/validation_71_5.png" src="_images/validation_71_5.png" />
-<img alt="_images/validation_71_6.png" src="_images/validation_71_6.png" />
+<img alt="_images/validation_69_1.png" src="_images/validation_69_1.png" />
+<img alt="_images/validation_69_2.png" src="_images/validation_69_2.png" />
+<img alt="_images/validation_69_3.png" src="_images/validation_69_3.png" />
+<img alt="_images/validation_69_4.png" src="_images/validation_69_4.png" />
+<img alt="_images/validation_69_5.png" src="_images/validation_69_5.png" />
+<img alt="_images/validation_69_6.png" src="_images/validation_69_6.png" />
 </div>
 </div>
 </div>
@@ -12541,8 +12540,8 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2aac7ec92220&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_73_2.png" src="_images/validation_73_2.png" />
-<img alt="_images/validation_73_3.png" src="_images/validation_73_3.png" />
+<img alt="_images/validation_71_2.png" src="_images/validation_71_2.png" />
+<img alt="_images/validation_71_3.png" src="_images/validation_71_3.png" />
 </div>
 </div>
 </div>
@@ -12553,7 +12552,12 @@ Coordinates:
 <p>Looks like our Costa Rica dome is too small and slightly in the wrong place; Also a warm bias at the equator</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fg</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D20</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+<span class="n">D20</span><span class="p">[</span><span class="s2">&quot;argo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">argo</span><span class="o">.</span><span class="n">D20</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">monthly</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+<span class="n">D20</span><span class="p">[</span><span class="s2">&quot;MOM6&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;monthly1deg&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">D20</span>
+
+
+<span class="n">fg</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">D20</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">to_array</span><span class="p">()</span>
     <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -12570,143 +12574,26 @@ Coordinates:
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="epbl-vs-cpl0-d20">
+<h4>epbl vs cpl0 : D20<a class="headerlink" href="#epbl-vs-cpl0-d20" title="Permalink to this headline">¶</a></h4>
+<p>Very minor changes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;annual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">D20</span> <span class="o">-</span> <span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;annual&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">D20</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">annotate_stats</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">plot_costa_rica_dome_extent</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/core/nanops.py:142: RuntimeWarning: Mean of empty slice
-  return np.nanmean(a, axis=axis, dtype=dtype)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/glade/u/home/dcherian/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/plot/plot.py:970: MatplotlibDeprecationWarning: Passing parameters norm and vmin/vmax simultaneously is deprecated since 3.3 and will become an error two minor releases later. Please pass vmin/vmax directly to the norm when creating it.
+  primitive = ax.pcolormesh(x, y, z, **kwargs)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">35</span><span class="n">b459f1d889</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fg</span> <span class="o">=</span> <span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">D20</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="o">.</span><span class="n">to_array</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;variable&quot;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/plot/plot.py</span> in <span class="ni">plotmethod</span><span class="nt">(_PlotMethods_obj, x, y, figsize, size, aspect, ax, row, col, col_wrap, xincrease, yincrease, add_colorbar, add_labels, vmin, vmax, cmap, colors, center, robust, extend, levels, infer_intervals, subplot_kws, cbar_ax, cbar_kwargs, xscale, yscale, xticks, yticks, xlim, ylim, norm, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">825</span>         <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;_PlotMethods_obj&quot;</span><span class="p">,</span> <span class="s2">&quot;newplotfunc&quot;</span><span class="p">,</span> <span class="s2">&quot;kwargs&quot;</span><span class="p">]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">826</span>             <span class="k">del</span> <span class="n">allargs</span><span class="p">[</span><span class="n">arg</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">827</span>         <span class="k">return</span> <span class="n">newplotfunc</span><span class="p">(</span><span class="o">**</span><span class="n">allargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">828</span> 
-<span class="g g-Whitespace">    </span><span class="mi">829</span>     <span class="c1"># Add to class _PlotMethods</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/plot/plot.py</span> in <span class="ni">newplotfunc</span><span class="nt">(darray, x, y, figsize, size, aspect, ax, row, col, col_wrap, xincrease, yincrease, add_colorbar, add_labels, vmin, vmax, cmap, center, robust, extend, levels, infer_intervals, colors, subplot_kws, cbar_ax, cbar_kwargs, xscale, yscale, xticks, yticks, xlim, ylim, norm, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span>             <span class="c1"># Need the decorated plotting function</span>
-<span class="g g-Whitespace">    </span><span class="mi">637</span>             <span class="n">allargs</span><span class="p">[</span><span class="s2">&quot;plotfunc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">plotfunc</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">638</span>             <span class="k">return</span> <span class="n">_easy_facetgrid</span><span class="p">(</span><span class="n">darray</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;dataarray&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">allargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span> 
-<span class="g g-Whitespace">    </span><span class="mi">640</span>         <span class="n">plt</span> <span class="o">=</span> <span class="n">import_matplotlib_pyplot</span><span class="p">()</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/plot/facetgrid.py</span> in <span class="ni">_easy_facetgrid</span><span class="nt">(data, plotfunc, kind, x, y, row, col, col_wrap, sharex, sharey, aspect, size, subplot_kws, ax, figsize, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">642</span> 
-<span class="g g-Whitespace">    </span><span class="mi">643</span>     <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;dataarray&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">644</span>         <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">map_dataarray</span><span class="p">(</span><span class="n">plotfunc</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span> 
-<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;dataset&quot;</span><span class="p">:</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/plot/facetgrid.py</span> in <span class="ni">map_dataarray</span><span class="nt">(self, func, x, y, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span> 
-<span class="g g-Whitespace">    </span><span class="mi">248</span>         <span class="n">cmap_params</span><span class="p">,</span> <span class="n">cbar_kwargs</span> <span class="o">=</span> <span class="n">_process_cmap_cbar_kwargs</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">249</span>             <span class="n">func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span> 
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/core/dataarray.py</span> in <span class="ni">values</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>     <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="sd">&quot;&quot;&quot;The array&#39;s data as a numpy.ndarray&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">570</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable</span><span class="o">.</span><span class="n">values</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span> 
-<span class="g g-Whitespace">    </span><span class="mi">572</span>     <span class="nd">@values</span><span class="o">.</span><span class="n">setter</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/core/variable.py</span> in <span class="ni">values</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span>     <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">456</span>         <span class="sd">&quot;&quot;&quot;The variable&#39;s data as a numpy.ndarray&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">457</span>         <span class="k">return</span> <span class="n">_as_array_or_item</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span> 
-<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="nd">@values</span><span class="o">.</span><span class="n">setter</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/xarray/core/variable.py</span> in <span class="ni">_as_array_or_item</span><span class="nt">(data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span>     <span class="n">TODO</span><span class="p">:</span> <span class="n">remove</span> <span class="n">this</span> <span class="p">(</span><span class="n">replace</span> <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">)</span> <span class="n">once</span> <span class="n">these</span> <span class="n">issues</span> <span class="n">are</span> <span class="n">fixed</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="sd">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">260</span><span class="sd">     data = np.asarray(data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span><span class="sd">     if data.ndim == 0:</span>
-<span class="g g-Whitespace">    </span><span class="mi">262</span><span class="sd">         if data.dtype.kind == &quot;M&quot;:</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/numpy/core/_asarray.py</span> in <span class="ni">asarray</span><span class="nt">(a, dtype, order)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">83</span>     <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> 
-<span class="g g-Whitespace">     </span><span class="mi">85</span> 
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/dask/array/core.py</span> in <span class="ni">__array__</span><span class="nt">(self, dtype, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1338</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1339</span>     <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1340</span>         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1341</span>         <span class="k">if</span> <span class="n">dtype</span> <span class="ow">and</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">dtype</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1342</span>             <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/dask/base.py</span> in <span class="ni">compute</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>         <span class="n">dask</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">compute</span>
-<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">167</span><span class="s2">         (result,) = compute(self, traverse=False, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span><span class="s2">         return result</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span><span class="s2"> </span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/dask/base.py</span> in <span class="ni">compute</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span><span class="s2">         postcomputes.append(x.__dask_postcompute__())</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">447</span><span class="s2">     results = schedule(dsk, keys, **kwargs)</span>
-<span class="nn">    448     return repack([f(r, *a) for r, (f, a)</span> in <span class="ni">zip</span><span class="nt">(results, postcomputes)])</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span><span class="s2"> </span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/distributed/client.py</span> in <span class="ni">get</span><span class="nt">(self, dsk, keys, restrictions, loose_restrictions, resources, sync, asynchronous, direct, retries, priority, fifo_timeout, actors, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2691</span><span class="s2">                     should_rejoin = False</span>
-<span class="g g-Whitespace">   </span><span class="mi">2692</span><span class="s2">             try:</span>
-<span class="ne">-&gt; </span><span class="mi">2693</span><span class="s2">                 results = self.gather(packed, asynchronous=asynchronous, direct=direct)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2694</span><span class="s2">             finally:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2695</span><span class="s2">                 for f in futures.values():</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/distributed/client.py</span> in <span class="ni">gather</span><span class="nt">(self, futures, errors, direct, asynchronous)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1982</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1983</span><span class="s2">                 local_worker = None</span>
-<span class="ne">-&gt; </span><span class="mi">1984</span><span class="s2">             return self.sync(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1985</span><span class="s2">                 self._gather,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1986</span><span class="s2">                 futures,</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/distributed/client.py</span> in <span class="ni">sync</span><span class="nt">(self, func, asynchronous, callback_timeout, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="s2">             return future</span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span><span class="s2">         else:</span>
-<span class="ne">--&gt; </span><span class="mi">832</span><span class="s2">             return sync(</span>
-<span class="g g-Whitespace">    </span><span class="mi">833</span><span class="s2">                 self.loop, func, *args, callback_timeout=callback_timeout, **kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">834</span><span class="s2">             )</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/site-packages/distributed/utils.py</span> in <span class="ni">sync</span><span class="nt">(loop, func, callback_timeout, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span><span class="s2">     else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span><span class="s2">         while not e.is_set():</span>
-<span class="ne">--&gt; </span><span class="mi">336</span><span class="s2">             e.wait(10)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span><span class="s2">     if error[0]:</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span><span class="s2">         typ, exc, tb = error[0]</span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">556</span><span class="s2">             signaled = self._flag</span>
-<span class="g g-Whitespace">    </span><span class="mi">557</span><span class="s2">             if not signaled:</span>
-<span class="ne">--&gt; </span><span class="mi">558</span><span class="s2">                 signaled = self._cond.wait(timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span><span class="s2">             return signaled</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span><span class="s2"> </span>
-
-<span class="nn">~/miniconda3/envs/dcpy/lib/python3.8/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span><span class="s2">                 if timeout &gt; 0:</span>
-<span class="ne">--&gt; </span><span class="mi">306</span><span class="s2">                     gotit = waiter.acquire(True, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span><span class="s2">                 else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span><span class="s2">                     gotit = waiter.acquire(False)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
+<img alt="_images/validation_75_1.png" src="_images/validation_75_1.png" />
 </div>
-<img alt="_images/validation_75_2.png" src="_images/validation_75_2.png" />
 </div>
 </div>
 </div>
