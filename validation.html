@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ETPAC MOM6 validation &#8212; Eastern Tropical Pacific</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -25,8 +25,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,20 +34,17 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,9 +52,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Notebooks" href="intro.html" />
+    <link rel="prev" title="Shelf animations" href="animate-shelf.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -82,20 +81,27 @@
   <h1 class="site-logo" id="site-title">Eastern Tropical Pacific</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   notebooks
  </span>
 </p>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="consolidate-shelf-files.html">
+   consolidate shelf files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="animate-shelf.html">
+   Shelf animations
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    ETPAC MOM6 validation
@@ -103,9 +109,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -120,25 +124,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -150,9 +154,9 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -168,13 +172,13 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -189,22 +193,18 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/dcherian/etpac/blob/master/notebooks/validation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
         
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -605,6 +605,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -3637,216 +3638,17 @@ roTBs2RqAAAAAElFTkSuQmCC'
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">annotate_stats</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Annotates axes with statistics of the plotted array. Only works with pcolormesh.&quot;&quot;&quot;</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Mean: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">Max: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="se">\n</span><span class="s2">Min: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="n">ha</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="n">va</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">contour_over_under</span><span class="p">(</span><span class="n">fg</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-
-    <span class="n">minimum</span> <span class="o">=</span> <span class="n">fg</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">maximum</span> <span class="o">=</span> <span class="n">fg</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
-
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">fg</span><span class="o">.</span><span class="n">_mappables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">norm</span>
-    <span class="n">vmin</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">vmin</span>
-    <span class="n">vmax</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">vmax</span>
-
-    <span class="n">delta</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">vmin</span> <span class="o">-</span> <span class="n">minimum</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">vmax</span> <span class="o">-</span> <span class="n">maximum</span><span class="p">))</span>
-    <span class="n">dlevels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span> <span class="o">*</span> <span class="n">delta</span>
-    <span class="n">newlevels</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">vmin</span> <span class="o">-</span> <span class="n">dlevels</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">+</span> <span class="n">dlevels</span><span class="p">]))</span>
-
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;add_colorbar&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;colors&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;linewidths&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">fg</span><span class="o">.</span><span class="n">map_dataarray</span><span class="p">(</span>
-        <span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">fg</span><span class="o">.</span><span class="n">_x_var</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fg</span><span class="o">.</span><span class="n">_y_var</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">newlevels</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-    <span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">plot_costa_rica_dome_extent</span><span class="p">():</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="p">[</span><span class="mi">360</span> <span class="o">-</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">360</span> <span class="o">-</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">360</span> <span class="o">-</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">360</span> <span class="o">-</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">360</span> <span class="o">-</span> <span class="mi">95</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span>
-    <span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">fg_map</span><span class="p">(</span><span class="n">fg</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">loc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fg</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">fg</span><span class="o">.</span><span class="n">name_dicts</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
-        <span class="n">subset</span> <span class="o">=</span> <span class="n">fg</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">loc</span><span class="p">]</span>
-        <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">subset</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">single_contour_over_under</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">hdl</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-
-    <span class="n">data</span> <span class="o">=</span> <span class="n">array</span>
-
-    <span class="n">minimum</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
-    <span class="n">maximum</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
-
-    <span class="n">norm</span> <span class="o">=</span> <span class="n">hdl</span><span class="o">.</span><span class="n">norm</span>
-    <span class="n">vmin</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">vmin</span>
-    <span class="n">vmax</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">vmax</span>
-
-    <span class="n">delta</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">vmin</span> <span class="o">-</span> <span class="n">minimum</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">vmax</span> <span class="o">-</span> <span class="n">maximum</span><span class="p">))</span>
-    <span class="n">dlevels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">levels</span><span class="p">)</span> <span class="o">*</span> <span class="n">delta</span>
-    <span class="n">newlevels</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">vmin</span> <span class="o">-</span> <span class="n">dlevels</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">+</span> <span class="n">dlevels</span><span class="p">]))</span>
-
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;add_colorbar&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;colors&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;linewidths&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="n">array</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">levels</span><span class="o">=</span><span class="n">newlevels</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">hdl</span><span class="o">.</span><span class="n">axes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">euc_transport_z</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-    <span class="n">trans</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">u</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">105e3</span>
-    <span class="n">trans</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;m²/s&quot;</span>
-    <span class="n">trans</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;long_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;EUC transport [$\int$ u {u &gt; 0} dy]&quot;</span>
-    <span class="k">return</span> <span class="n">trans</span>
-
-
-<span class="k">def</span> <span class="nf">euc_transport_y</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
-    <span class="n">trans</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">u</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
-    <span class="n">trans</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;m²/s&quot;</span>
-    <span class="n">trans</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;long_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;EUC transport [$\int$ u {u &gt; 0} dz]&quot;</span>
-    <span class="k">return</span> <span class="n">trans</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_section</span><span class="p">(</span><span class="n">lon</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">subsetter</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="mi">360</span> <span class="o">+</span> <span class="n">lon</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
-            <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span>
-        <span class="p">)</span>
-
-    <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-        <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-        <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">},</span>
-    <span class="p">)</span>
-
-    <span class="n">fg</span> <span class="o">=</span> <span class="p">(</span><span class="n">argo</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">subsetter</span><span class="p">))</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-    <span class="p">)</span>
-
-    <span class="c1"># UGLY HACK =)</span>
-    <span class="n">fg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
-    <span class="n">fg</span><span class="o">.</span><span class="n">map_dataarray</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;yh&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;zl&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">loc</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fg</span><span class="o">.</span><span class="n">name_dicts</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">fg</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
-
-        <span class="n">subsetter</span><span class="p">(</span><span class="n">mimocml</span><span class="o">.</span><span class="n">mld</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">hmimoc</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">subsetter</span><span class="p">(</span><span class="n">mimocml</span><span class="o">.</span><span class="n">mld</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="p">)</span>
-
-        <span class="n">subsetter</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">mld</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">hmom</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">subsetter</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">mld</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="p">)</span>
-
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmimoc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MIMOC MLD&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MOM6 MLD&quot;</span><span class="p">)</span>
-
-    <span class="n">fg</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;Argo monthly mean [black] vs MOM6 monthly mean [red], </span><span class="si">{</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">lon</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span>
-    <span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">plot_section_diff</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">22</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">plot_mld</span><span class="p">(</span><span class="n">mimocmld</span><span class="p">,</span> <span class="n">mom6mld</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
-        <span class="n">subsetter</span><span class="p">(</span><span class="n">mimocmld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">hmimoc</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span><span class="n">mimocmld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-        <span class="n">subsetter</span><span class="p">(</span><span class="n">mom6mld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">hmom</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span><span class="n">mom6mld</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">hmimoc</span><span class="p">,</span> <span class="n">hmom</span>
-
-    <span class="k">def</span> <span class="nf">subsetter</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
-        <span class="n">sub</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="mi">360</span> <span class="o">+</span> <span class="n">lon</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
-            <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">ymax</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="s2">&quot;vertical&quot;</span> <span class="ow">in</span> <span class="n">sub</span><span class="o">.</span><span class="n">cf</span><span class="p">:</span>
-            <span class="n">sub</span> <span class="o">=</span> <span class="n">sub</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">vertical</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">sub</span>
-
-    <span class="n">T_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-        <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-        <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;horizontal&quot;</span><span class="p">,</span> <span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;aspect&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
-        <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">yincrease</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
-        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;yh&quot;</span><span class="p">,</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;zl&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">dT_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;zl&quot;</span><span class="p">,</span>
-        <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-        <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">cmap</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">BrBG_r</span><span class="p">,</span>
-        <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span>
-            <span class="s2">&quot;aspect&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-            <span class="s2">&quot;anchor&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-            <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;ΔT [°C]&quot;</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="n">vmin</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">vmax</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">add_colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="n">annual1deg</span> <span class="o">=</span> <span class="n">monthly1deg</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">monthly1deg</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">annual_mean_bias</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span>
-        <span class="n">annual1deg</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">Z</span><span class="o">=</span><span class="n">argo</span><span class="o">.</span><span class="n">cf</span><span class="p">[</span><span class="s2">&quot;Z&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-        <span class="o">-</span> <span class="n">argo</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">monthly1deg</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">annual_mean_bias</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">dT_kwargs</span><span class="p">)</span>
-    <span class="n">subsetter</span><span class="p">(</span><span class="n">annual1deg</span><span class="p">)</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="o">**</span><span class="n">T_kwargs</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;MOM6 annual mean - Argo annual Mean [color];MOM6[red], </span><span class="si">{</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">lon</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span>
-    <span class="p">)</span>
-    <span class="n">hmimoc</span><span class="p">,</span> <span class="n">hmom</span> <span class="o">=</span> <span class="n">plot_mld</span><span class="p">(</span>
-        <span class="n">annual1deg</span><span class="o">.</span><span class="n">mld</span><span class="p">,</span>
-        <span class="n">mimocml</span><span class="o">.</span><span class="n">mld</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">mimocml</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days_in_month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">),</span>
-        <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span>
-    <span class="p">)</span>
-
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmimoc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MIMOC MLD&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MOM6 MLD&quot;</span><span class="p">)</span>
-
-    <span class="c1">####</span>
-    <span class="n">fg</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span>
-        <span class="n">monthly1deg</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">chunk</span><span class="p">({</span><span class="s2">&quot;zl&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">zl</span><span class="o">=</span><span class="n">argo</span><span class="o">.</span><span class="n">zl</span><span class="p">)</span> <span class="o">-</span> <span class="n">argo</span><span class="o">.</span><span class="n">thetao</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">dT_kwargs</span><span class="p">)</span>
-
-    <span class="c1"># UGLY HACK =)</span>
-    <span class="n">fg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">subsetter</span><span class="p">(</span><span class="n">monthly</span><span class="o">.</span><span class="n">thetao</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
-    <span class="n">fg</span><span class="o">.</span><span class="n">map_dataarray</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">,</span> <span class="o">**</span><span class="n">T_kwargs</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">loc</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fg</span><span class="o">.</span><span class="n">name_dicts</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">fg</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
-        <span class="n">hmimoc</span><span class="p">,</span> <span class="n">hmom</span> <span class="o">=</span> <span class="n">plot_mld</span><span class="p">(</span><span class="n">mimocml</span><span class="o">.</span><span class="n">mld</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">monthly</span><span class="o">.</span><span class="n">mld</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">loc</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmimoc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MIMOC MLD&quot;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
-    <span class="n">dcpy</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">annotate_end</span><span class="p">(</span><span class="n">hmom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;MOM6 MLD&quot;</span><span class="p">)</span>
-
-    <span class="n">fg</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;MOM6 monthly mean - Argo Monthly Mean [color];MOM6[red], </span><span class="si">{</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">lon</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span>
-    <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">etpac</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">annotate_stats</span><span class="p">,</span>
+    <span class="n">calc_eqadcp</span><span class="p">,</span>
+    <span class="n">contour_over_under</span><span class="p">,</span>
+    <span class="n">euc_transport_y</span><span class="p">,</span>
+    <span class="n">euc_transport_z</span><span class="p">,</span>
+    <span class="n">fg_map</span><span class="p">,</span>
+    <span class="n">plot_costa_rica_dome_extent</span><span class="p">,</span>
+    <span class="n">plot_section</span><span class="p">,</span>
+    <span class="n">single_contour_over_under</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5176,17 +4978,7 @@ bokeh.protocol.exceptions.ProtocolError: Token is expired.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_eqadcp</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
-
-    <span class="n">eqadcp</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
-        <span class="n">latitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">360</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">125</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">95</span><span class="p">]),</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span>
-    <span class="p">)[[</span><span class="s2">&quot;uo&quot;</span><span class="p">,</span> <span class="s2">&quot;vo&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
-    <span class="n">eqadcp</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">eqadcp</span><span class="p">[</span><span class="s2">&quot;uo&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">eqadcp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;xh&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;xh&quot;</span><span class="p">:</span> <span class="s2">&quot;xq&quot;</span><span class="p">})[</span><span class="s2">&quot;vo&quot;</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">eqadcp</span>
-
-
-<span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_eqadcp</span><span class="p">(</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;ds&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_eqadcp</span><span class="p">(</span><span class="n">epbl</span><span class="p">[</span><span class="s2">&quot;ds&quot;</span><span class="p">])</span>
 <span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_eqadcp</span><span class="p">(</span><span class="n">cpl0</span><span class="p">[</span><span class="s2">&quot;ds&quot;</span><span class="p">])</span>
 <span class="n">leith</span><span class="p">[</span><span class="s2">&quot;eqadcp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_eqadcp</span><span class="p">(</span><span class="n">leith</span><span class="p">[</span><span class="s2">&quot;ds&quot;</span><span class="p">])</span>
 </pre></div>
@@ -11999,7 +11791,7 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_56_0.png" src="_images/validation_56_0.png" />
+<img alt="_images/validation_55_0.png" src="_images/validation_55_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12020,7 +11812,7 @@ Data variables:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_57_0.png" src="_images/validation_57_0.png" />
+<img alt="_images/validation_56_0.png" src="_images/validation_56_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12065,11 +11857,11 @@ Data variables:
   plt.tight_layout()
 </pre></div>
 </div>
-<img alt="_images/validation_58_1.png" src="_images/validation_58_1.png" />
-<img alt="_images/validation_58_2.png" src="_images/validation_58_2.png" />
-<img alt="_images/validation_58_3.png" src="_images/validation_58_3.png" />
-<img alt="_images/validation_58_4.png" src="_images/validation_58_4.png" />
-<img alt="_images/validation_58_5.png" src="_images/validation_58_5.png" />
+<img alt="_images/validation_57_1.png" src="_images/validation_57_1.png" />
+<img alt="_images/validation_57_2.png" src="_images/validation_57_2.png" />
+<img alt="_images/validation_57_3.png" src="_images/validation_57_3.png" />
+<img alt="_images/validation_57_4.png" src="_images/validation_57_4.png" />
+<img alt="_images/validation_57_5.png" src="_images/validation_57_5.png" />
 </div>
 </div>
 </div>
@@ -12095,7 +11887,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b9802f55d60&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_60_1.png" src="_images/validation_60_1.png" />
+<img alt="_images/validation_59_1.png" src="_images/validation_59_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12116,7 +11908,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b97fb7b5f10&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_61_1.png" src="_images/validation_61_1.png" />
+<img alt="_images/validation_60_1.png" src="_images/validation_60_1.png" />
 </div>
 </div>
 </div>
@@ -12155,7 +11947,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1, &#39;Annual mean SST bias: MOM6 - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_63_1.png" src="_images/validation_63_1.png" />
+<img alt="_images/validation_62_1.png" src="_images/validation_62_1.png" />
 </div>
 </div>
 </div>
@@ -12178,7 +11970,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;epbl - cpl0&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_65_1.png" src="_images/validation_65_1.png" />
+<img alt="_images/validation_64_1.png" src="_images/validation_64_1.png" />
 </div>
 </div>
 </div>
@@ -12280,7 +12072,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean T&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_70_2.png" src="_images/validation_70_2.png" />
+<img alt="_images/validation_69_2.png" src="_images/validation_69_2.png" />
 </div>
 </div>
 </div>
@@ -12354,8 +12146,8 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean $D_{20}$: MOM6 - Argo&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_75_2.png" src="_images/validation_75_2.png" />
-<img alt="_images/validation_75_3.png" src="_images/validation_75_3.png" />
+<img alt="_images/validation_74_2.png" src="_images/validation_74_2.png" />
+<img alt="_images/validation_74_3.png" src="_images/validation_74_3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12372,7 +12164,7 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Leith - Smag&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_76_1.png" src="_images/validation_76_1.png" />
+<img alt="_images/validation_75_1.png" src="_images/validation_75_1.png" />
 </div>
 </div>
 </div>
@@ -12459,7 +12251,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b98088e27f0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_80_1.png" src="_images/validation_80_1.png" />
+<img alt="_images/validation_79_1.png" src="_images/validation_79_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12577,7 +12369,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_89_0.png" src="_images/validation_89_0.png" />
+<img alt="_images/validation_88_0.png" src="_images/validation_88_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12598,7 +12390,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_90_0.png" src="_images/validation_90_0.png" />
+<img alt="_images/validation_89_0.png" src="_images/validation_89_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12626,11 +12418,11 @@ ps : `xarray.DataArray`
   plt.tight_layout()
 </pre></div>
 </div>
-<img alt="_images/validation_91_1.png" src="_images/validation_91_1.png" />
-<img alt="_images/validation_91_2.png" src="_images/validation_91_2.png" />
-<img alt="_images/validation_91_3.png" src="_images/validation_91_3.png" />
-<img alt="_images/validation_91_4.png" src="_images/validation_91_4.png" />
-<img alt="_images/validation_91_5.png" src="_images/validation_91_5.png" />
+<img alt="_images/validation_90_1.png" src="_images/validation_90_1.png" />
+<img alt="_images/validation_90_2.png" src="_images/validation_90_2.png" />
+<img alt="_images/validation_90_3.png" src="_images/validation_90_3.png" />
+<img alt="_images/validation_90_4.png" src="_images/validation_90_4.png" />
+<img alt="_images/validation_90_5.png" src="_images/validation_90_5.png" />
 </div>
 </div>
 </div>
@@ -12652,7 +12444,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b754341ab80&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_93_1.png" src="_images/validation_93_1.png" />
+<img alt="_images/validation_92_1.png" src="_images/validation_92_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12673,7 +12465,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b754b79eac0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_94_1.png" src="_images/validation_94_1.png" />
+<img alt="_images/validation_93_1.png" src="_images/validation_93_1.png" />
 </div>
 </div>
 </div>
@@ -12711,7 +12503,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1, &#39;Annual mean SST bias: MOM6 - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_96_2.png" src="_images/validation_96_2.png" />
+<img alt="_images/validation_95_2.png" src="_images/validation_95_2.png" />
 </div>
 </div>
 </div>
@@ -12734,7 +12526,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;epbl - cpl0&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_98_1.png" src="_images/validation_98_1.png" />
+<img alt="_images/validation_97_1.png" src="_images/validation_97_1.png" />
 </div>
 </div>
 </div>
@@ -12766,7 +12558,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2aac978a9280&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_100_2.png" src="_images/validation_100_2.png" />
+<img alt="_images/validation_99_2.png" src="_images/validation_99_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -12783,7 +12575,7 @@ ps : `xarray.DataArray`
   primitive = ax.pcolormesh(x, y, z, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/validation_101_1.png" src="_images/validation_101_1.png" />
+<img alt="_images/validation_100_1.png" src="_images/validation_100_1.png" />
 </div>
 </div>
 </div>
@@ -12813,12 +12605,12 @@ ps : `xarray.DataArray`
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_103_1.png" src="_images/validation_103_1.png" />
-<img alt="_images/validation_103_2.png" src="_images/validation_103_2.png" />
-<img alt="_images/validation_103_3.png" src="_images/validation_103_3.png" />
-<img alt="_images/validation_103_4.png" src="_images/validation_103_4.png" />
-<img alt="_images/validation_103_5.png" src="_images/validation_103_5.png" />
-<img alt="_images/validation_103_6.png" src="_images/validation_103_6.png" />
+<img alt="_images/validation_102_1.png" src="_images/validation_102_1.png" />
+<img alt="_images/validation_102_2.png" src="_images/validation_102_2.png" />
+<img alt="_images/validation_102_3.png" src="_images/validation_102_3.png" />
+<img alt="_images/validation_102_4.png" src="_images/validation_102_4.png" />
+<img alt="_images/validation_102_5.png" src="_images/validation_102_5.png" />
+<img alt="_images/validation_102_6.png" src="_images/validation_102_6.png" />
 </div>
 </div>
 </div>
@@ -12867,8 +12659,8 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2aac7ec92220&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_105_2.png" src="_images/validation_105_2.png" />
-<img alt="_images/validation_105_3.png" src="_images/validation_105_3.png" />
+<img alt="_images/validation_104_2.png" src="_images/validation_104_2.png" />
+<img alt="_images/validation_104_3.png" src="_images/validation_104_3.png" />
 </div>
 </div>
 </div>
@@ -12910,8 +12702,8 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean $D_{20}$: MOM6 - Argo&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_107_2.png" src="_images/validation_107_2.png" />
-<img alt="_images/validation_107_3.png" src="_images/validation_107_3.png" />
+<img alt="_images/validation_106_2.png" src="_images/validation_106_2.png" />
+<img alt="_images/validation_106_3.png" src="_images/validation_106_3.png" />
 </div>
 </div>
 <div class="section" id="epbl-vs-cpl0-d20">
@@ -12931,7 +12723,7 @@ ps : `xarray.DataArray`
   primitive = ax.pcolormesh(x, y, z, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/validation_109_1.png" src="_images/validation_109_1.png" />
+<img alt="_images/validation_108_1.png" src="_images/validation_108_1.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -13019,7 +12811,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2ab32f11a410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_116_1.png" src="_images/validation_116_1.png" />
+<img alt="_images/validation_115_1.png" src="_images/validation_115_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13041,7 +12833,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2adebd59c550&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_117_1.png" src="_images/validation_117_1.png" />
+<img alt="_images/validation_116_1.png" src="_images/validation_116_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13062,7 +12854,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_118_0.png" src="_images/validation_118_0.png" />
+<img alt="_images/validation_117_0.png" src="_images/validation_117_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13080,7 +12872,7 @@ ps : `xarray.DataArray`
   primitive = ax.contour(x, y, z, **kwargs)
 </pre></div>
 </div>
-<img alt="_images/validation_119_1.png" src="_images/validation_119_1.png" />
+<img alt="_images/validation_118_1.png" src="_images/validation_118_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13094,7 +12886,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_120_0.png" src="_images/validation_120_0.png" />
+<img alt="_images/validation_119_0.png" src="_images/validation_119_0.png" />
 </div>
 </div>
 </div>
@@ -13135,7 +12927,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean SST bias: MOM6 - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_123_1.png" src="_images/validation_123_1.png" />
+<img alt="_images/validation_122_1.png" src="_images/validation_122_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13149,7 +12941,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_124_0.png" src="_images/validation_124_0.png" />
+<img alt="_images/validation_123_0.png" src="_images/validation_123_0.png" />
 </div>
 </div>
 </div>
@@ -13170,8 +12962,8 @@ ps : `xarray.DataArray`
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_127_1.png" src="_images/validation_127_1.png" />
-<img alt="_images/validation_127_2.png" src="_images/validation_127_2.png" />
+<img alt="_images/validation_126_1.png" src="_images/validation_126_1.png" />
+<img alt="_images/validation_126_2.png" src="_images/validation_126_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13187,8 +12979,8 @@ ps : `xarray.DataArray`
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_128_1.png" src="_images/validation_128_1.png" />
-<img alt="_images/validation_128_2.png" src="_images/validation_128_2.png" />
+<img alt="_images/validation_127_1.png" src="_images/validation_127_1.png" />
+<img alt="_images/validation_127_2.png" src="_images/validation_127_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13204,8 +12996,8 @@ ps : `xarray.DataArray`
   self.cbar = self.fig.colorbar(
 </pre></div>
 </div>
-<img alt="_images/validation_129_1.png" src="_images/validation_129_1.png" />
-<img alt="_images/validation_129_2.png" src="_images/validation_129_2.png" />
+<img alt="_images/validation_128_1.png" src="_images/validation_128_1.png" />
+<img alt="_images/validation_128_2.png" src="_images/validation_128_2.png" />
 </div>
 </div>
 </div>
@@ -13237,7 +13029,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean T&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_131_2.png" src="_images/validation_131_2.png" />
+<img alt="_images/validation_130_2.png" src="_images/validation_130_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13258,7 +13050,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2af44427ceb0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_132_2.png" src="_images/validation_132_2.png" />
+<img alt="_images/validation_131_2.png" src="_images/validation_131_2.png" />
 </div>
 </div>
 </div>
@@ -13301,8 +13093,8 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean $D_{20}$: MOM6 - Argo&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_134_2.png" src="_images/validation_134_2.png" />
-<img alt="_images/validation_134_3.png" src="_images/validation_134_3.png" />
+<img alt="_images/validation_133_2.png" src="_images/validation_133_2.png" />
+<img alt="_images/validation_133_3.png" src="_images/validation_133_3.png" />
 </div>
 </div>
 <p>Not sure if this is useful</p>
@@ -13326,7 +13118,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.01, &#39;$D_{20}$: MOM6 - Argo&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_136_2.png" src="_images/validation_136_2.png" />
+<img alt="_images/validation_135_2.png" src="_images/validation_135_2.png" />
 </div>
 </div>
 </div>
@@ -13342,7 +13134,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b079f913eb0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_138_1.png" src="_images/validation_138_1.png" />
+<img alt="_images/validation_137_1.png" src="_images/validation_137_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13356,7 +13148,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b079bc337c0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_139_1.png" src="_images/validation_139_1.png" />
+<img alt="_images/validation_138_1.png" src="_images/validation_138_1.png" />
 </div>
 </div>
 </div>
@@ -13380,7 +13172,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Annual mean bias in MLD (MOM6 - MIMOC)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_141_1.png" src="_images/validation_141_1.png" />
+<img alt="_images/validation_140_1.png" src="_images/validation_140_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13401,7 +13193,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.05, &#39;MOM6 MLD - MIMOC MLD climatology&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_142_2.png" src="_images/validation_142_2.png" />
+<img alt="_images/validation_141_2.png" src="_images/validation_141_2.png" />
 </div>
 </div>
 </div>
@@ -13424,7 +13216,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(600.0, 0.0)
 </pre></div>
 </div>
-<img alt="_images/validation_145_1.png" src="_images/validation_145_1.png" />
+<img alt="_images/validation_144_1.png" src="_images/validation_144_1.png" />
 </div>
 </div>
 </div>
@@ -13479,7 +13271,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x2b96f203ce80&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_149_2.png" src="_images/validation_149_2.png" />
+<img alt="_images/validation_148_2.png" src="_images/validation_148_2.png" />
 </div>
 </div>
 <p>Vertical mean velocity between 50 and 250m ; Annual mean</p>
@@ -13500,7 +13292,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_151_0.png" src="_images/validation_151_0.png" />
+<img alt="_images/validation_150_0.png" src="_images/validation_150_0.png" />
 </div>
 </div>
 <hr class="docutils" />
@@ -13544,7 +13336,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_155_0.png" src="_images/validation_155_0.png" />
+<img alt="_images/validation_154_0.png" src="_images/validation_154_0.png" />
 </div>
 </div>
 </div>
@@ -13571,7 +13363,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Argo 2013-Jan mean (black), MOM6 (red)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_157_1.png" src="_images/validation_157_1.png" />
+<img alt="_images/validation_156_1.png" src="_images/validation_156_1.png" />
 </div>
 </div>
 <p>These mixed layers look a little too deep?</p>
@@ -13594,7 +13386,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Argo 2013-Jan mean (black), Mercator IC (red)&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_159_1.png" src="_images/validation_159_1.png" />
+<img alt="_images/validation_158_1.png" src="_images/validation_158_1.png" />
 </div>
 </div>
 <p>Ufff… these are bad</p>
@@ -13624,7 +13416,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.01, &#39;MOM6 - Argo (1°x1°) temperature Monthly Means&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_161_1.png" src="_images/validation_161_1.png" />
+<img alt="_images/validation_160_1.png" src="_images/validation_160_1.png" />
 </div>
 </div>
 <p>These are thermocline biases… or amy be a mixed layer depth bias</p>
@@ -13644,7 +13436,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2abdee912b90&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_163_1.png" src="_images/validation_163_1.png" />
+<img alt="_images/validation_162_1.png" src="_images/validation_162_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13671,7 +13463,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1, &#39;MOM6 - Argo monthly mean temperature&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_164_1.png" src="_images/validation_164_1.png" />
+<img alt="_images/validation_163_1.png" src="_images/validation_163_1.png" />
 </div>
 </div>
 </div>
@@ -13698,7 +13490,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.05, &#39;MOM6 MLD - MIMOC MLD climatology&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_166_1.png" src="_images/validation_166_1.png" />
+<img alt="_images/validation_165_1.png" src="_images/validation_165_1.png" />
 </div>
 </div>
 </div>
@@ -13736,7 +13528,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b4bd8401410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_171_1.png" src="_images/validation_171_1.png" />
+<img alt="_images/validation_170_1.png" src="_images/validation_170_1.png" />
 </div>
 </div>
 </div>
@@ -13755,7 +13547,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.1, &#39;Mercator SST - IC SST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_174_1.png" src="_images/validation_174_1.png" />
+<img alt="_images/validation_173_1.png" src="_images/validation_173_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13769,7 +13561,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;IC SST - OISST&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_175_1.png" src="_images/validation_175_1.png" />
+<img alt="_images/validation_174_1.png" src="_images/validation_174_1.png" />
 </div>
 </div>
 <p>Daily mean for first day has same biases w.r.t OISSST as initial condition. Makes sense</p>
@@ -13783,7 +13575,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2aded5422d50&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_177_1.png" src="_images/validation_177_1.png" />
+<img alt="_images/validation_176_1.png" src="_images/validation_176_1.png" />
 </div>
 </div>
 </div>
@@ -13806,7 +13598,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96e8179e50&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_180_1.png" src="_images/validation_180_1.png" />
+<img alt="_images/validation_179_1.png" src="_images/validation_179_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13819,7 +13611,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96e95ff110&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_181_1.png" src="_images/validation_181_1.png" />
+<img alt="_images/validation_180_1.png" src="_images/validation_180_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13832,7 +13624,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b96d45acfd0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_182_1.png" src="_images/validation_182_1.png" />
+<img alt="_images/validation_181_1.png" src="_images/validation_181_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -13854,7 +13646,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96d4bfe450&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_183_1.png" src="_images/validation_183_1.png" />
+<img alt="_images/validation_182_1.png" src="_images/validation_182_1.png" />
 </div>
 </div>
 </div>
@@ -13877,8 +13669,8 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Initial condition SST - Mercator 2013&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_185_1.png" src="_images/validation_185_1.png" />
-<img alt="_images/validation_185_2.png" src="_images/validation_185_2.png" />
+<img alt="_images/validation_184_1.png" src="_images/validation_184_1.png" />
+<img alt="_images/validation_184_2.png" src="_images/validation_184_2.png" />
 </div>
 </div>
 </div>
@@ -13901,7 +13693,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b9dc8a47110&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_188_1.png" src="_images/validation_188_1.png" />
+<img alt="_images/validation_187_1.png" src="_images/validation_187_1.png" />
 </div>
 </div>
 </div>
@@ -13919,7 +13711,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2b9de104a490&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_190_1.png" src="_images/validation_190_1.png" />
+<img alt="_images/validation_189_1.png" src="_images/validation_189_1.png" />
 </div>
 </div>
 </div>
@@ -13940,7 +13732,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b9ddd18d410&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_192_1.png" src="_images/validation_192_1.png" />
+<img alt="_images/validation_191_1.png" src="_images/validation_191_1.png" />
 </div>
 </div>
 </div>
@@ -13979,7 +13771,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b9e42c76910&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_195_1.png" src="_images/validation_195_1.png" />
+<img alt="_images/validation_194_1.png" src="_images/validation_194_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14012,8 +13804,8 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Initial condition SST - Mercator 2013&#39;)
 </pre></div>
 </div>
-<img alt="_images/validation_198_1.png" src="_images/validation_198_1.png" />
-<img alt="_images/validation_198_2.png" src="_images/validation_198_2.png" />
+<img alt="_images/validation_197_1.png" src="_images/validation_197_1.png" />
+<img alt="_images/validation_197_2.png" src="_images/validation_197_2.png" />
 </div>
 </div>
 </div>
@@ -14051,11 +13843,11 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_201_0.png" src="_images/validation_201_0.png" />
-<img alt="_images/validation_201_1.png" src="_images/validation_201_1.png" />
-<img alt="_images/validation_201_2.png" src="_images/validation_201_2.png" />
-<img alt="_images/validation_201_3.png" src="_images/validation_201_3.png" />
-<img alt="_images/validation_201_4.png" src="_images/validation_201_4.png" />
+<img alt="_images/validation_200_0.png" src="_images/validation_200_0.png" />
+<img alt="_images/validation_200_1.png" src="_images/validation_200_1.png" />
+<img alt="_images/validation_200_2.png" src="_images/validation_200_2.png" />
+<img alt="_images/validation_200_3.png" src="_images/validation_200_3.png" />
+<img alt="_images/validation_200_4.png" src="_images/validation_200_4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14084,7 +13876,7 @@ ps : `xarray.DataArray`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/validation_202_0.png" src="_images/validation_202_0.png" />
+<img alt="_images/validation_201_0.png" src="_images/validation_201_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14120,7 +13912,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96fe5a6ed0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_205_2.png" src="_images/validation_205_2.png" />
+<img alt="_images/validation_204_2.png" src="_images/validation_204_2.png" />
 </div>
 </div>
 </div>
@@ -14143,7 +13935,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2b96db21d550&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_207_2.png" src="_images/validation_207_2.png" />
+<img alt="_images/validation_206_2.png" src="_images/validation_206_2.png" />
 </div>
 </div>
 <div class="section" id="id22">
@@ -14179,7 +13971,7 @@ ps : `xarray.DataArray`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96678980d0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_210_1.png" src="_images/validation_210_1.png" />
+<img alt="_images/validation_209_1.png" src="_images/validation_209_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14566,7 +14358,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x2b96dd092950&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_213_1.png" src="_images/validation_213_1.png" />
+<img alt="_images/validation_212_1.png" src="_images/validation_212_1.png" />
 </div>
 </div>
 </div>
@@ -14588,7 +14380,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2b24ea8ecc90&gt;]
 </pre></div>
 </div>
-<img alt="_images/validation_215_1.png" src="_images/validation_215_1.png" />
+<img alt="_images/validation_214_1.png" src="_images/validation_214_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -14601,7 +14393,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2b24df1537d0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_216_1.png" src="_images/validation_216_1.png" />
+<img alt="_images/validation_215_1.png" src="_images/validation_215_1.png" />
 </div>
 </div>
 </div>
@@ -14645,7 +14437,7 @@ dl.xr-attrs {
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2aac7f371dc0&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_221_1.png" src="_images/validation_221_1.png" />
+<img alt="_images/validation_220_1.png" src="_images/validation_220_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -15258,7 +15050,7 @@ Attributes:
 -66.25
 </pre></div>
 </div>
-<img alt="_images/validation_226_1.png" src="_images/validation_226_1.png" />
+<img alt="_images/validation_225_1.png" src="_images/validation_225_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -15635,7 +15427,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x2aac9c084a00&gt;
 </pre></div>
 </div>
-<img alt="_images/validation_228_1.png" src="_images/validation_228_1.png" />
+<img alt="_images/validation_227_1.png" src="_images/validation_227_1.png" />
 </div>
 </div>
 <div class="section" id="hmxl-development">
@@ -16037,14 +15829,14 @@ Coordinates:
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Notebooks</a>
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="animate-shelf.html" title="previous page">Shelf animations</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -16070,7 +15862,7 @@ Coordinates:
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
