@@ -4,4 +4,6 @@
   chapters:
     # - file: markdown
     # - file: notebooks
+    - file: consolidate-shelf-files
+    - file: animate-shelf
     - file: validation
