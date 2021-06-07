@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -xeo pipefail
+
+# export PATH="$INSTALL_DIR/bin:$PATH"
+
+# Install jupyterlab extensions
+jupyter labextension install @jupyter-widgets/jupyterlab-manager \
+                             @jupyterlab/toc \
+                             dask-labextension \
+                             jupyter-matplotlib
