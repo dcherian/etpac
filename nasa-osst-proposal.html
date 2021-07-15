@@ -1867,7 +1867,7 @@ holoviews    : 1.14.4
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">distributed</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
 <span class="n">client</span>
@@ -2478,7 +2478,7 @@ GrADS</dd><dt><span>dataType :</span></dt><dd>Grid</dd><dt><span>documentation :
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mimocml</span> <span class="o">=</span> <span class="n">dcpy</span><span class="o">.</span><span class="n">oceans</span><span class="o">.</span><span class="n">read_mimoc</span><span class="p">()</span>
 <span class="n">mimocml</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mimocml</span><span class="o">.</span><span class="n">longitude</span> <span class="o">-</span> <span class="mi">360</span>
@@ -2532,9 +2532,13 @@ GrADS</dd><dt><span>dataType :</span></dt><dd>Grid</dd><dt><span>documentation :
 </div>
 <div class="section" id="mimoc-mls-vs-sss">
 <h3>MIMOC MLS vs SSS<a class="headerlink" href="#mimoc-mls-vs-sss" title="Permalink to this headline">¶</a></h3>
-<p>This figure tries to figure out how well the climatological SSS contours line up with climatological ML salinity contours. In red is the S=34 contour from the merged SSS product (2011-2021, 4 day). In black dashed are [34, 34.1, 34.2] contours for MIMOC mixed layer salinity.</p>
+<p>This figure tries to figure out how well the climatological SSS contours line up with climatological ML salinity contours.</p>
+<ul class="simple">
+<li><p>In red is the S=34 contour from the merged SSS product (2011-2021, 4 day).</p></li>
+<li><p>In black dashed are [34, 34.1, 34.2] contours for MIMOC mixed layer salinity.</p></li>
+</ul>
 <p>To within 0.2 psu; the S=34 contour at the surface is a reasonable approximation of S at the mixed layer base (climatologically)</p>
-<div class="cell docutils container">
+<div class="cell tag_full-width tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fg</span> <span class="o">=</span> <span class="n">mimocml</span><span class="o">.</span><span class="n">SALINITY_MIXED_LAYER</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
     <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mf">34.1</span><span class="p">,</span> <span class="mf">34.2</span><span class="p">],</span>
@@ -2561,7 +2565,7 @@ GrADS</dd><dt><span>dataType :</span></dt><dd>Grid</dd><dt><span>documentation :
 <h3>SSS contours<a class="headerlink" href="#sss-contours" title="Permalink to this headline">¶</a></h3>
 <p>Visualizes each 4-day mean contour in a month with the monthly mean SSS contour.</p>
 <p>There seems to be a lot of zonal extension except during MAM</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sss_monthly</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">sss</span><span class="o">.</span><span class="n">sss</span><span class="o">.</span><span class="n">cf</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
@@ -2574,7 +2578,7 @@ GrADS</dd><dt><span>dataType :</span></dt><dd>Grid</dd><dt><span>documentation :
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_full-width tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
