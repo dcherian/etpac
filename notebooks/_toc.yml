@@ -1,11 +1,10 @@
-- file: intro  # must have one
-
-- part: notebooks
-  chapters:
-    # - file: markdown
-    # - file: notebooks
-    - file: demo-notebook 
-    - file: consolidate-shelf-files
-    - file: animate-shelf
-    - file: validation
-    - file: nasa-osst-proposal
+format: jb-book
+root: intro
+options:
+  caption: notebooks
+chapters:
+- file: demo-notebook
+- file: consolidate-shelf-files
+- file: animate-shelf
+- file: validation
+- file: nasa-osst-proposal
