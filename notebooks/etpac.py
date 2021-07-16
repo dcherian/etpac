@@ -1,14 +1,15 @@
-import matplotlib.pyplot as plt
 import numba
 import numpy as np
-import xarray as xr
 from numba import float32, float64, guvectorize, vectorize
+import xarray as xr
+import matplotlib.pyplot as plt
 
 eddy_kinds = {
     # "all": {"color": "gray", "lat0": [5, 17], "lon0": [360 - 110, 275]},
     "teh": {"color": "r", "lat0": [13, 15.5], "lon0": [260, 275]},
     "pap": {"color": "b", "lat0": [-np.inf, 13], "lon0": [360 - 90, 275]},
     "oce": {"color": "g", "lat0": [8, 12], "lon0": [360 - 105, 360 - 97]},
+    "pan": {"color": "teal", "lat0": [0, 8], "lon0": [260, 290]},  # detection prevented by amplitude criteria
 }
 
 
