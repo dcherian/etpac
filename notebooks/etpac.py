@@ -1,21 +1,32 @@
+import matplotlib.pyplot as plt
 import numba
 import numpy as np
-from numba import float32, float64, guvectorize, vectorize
 import xarray as xr
-    
-    
+from numba import float32, float64, guvectorize, vectorize
+
+eddy_kinds = {
+    # "all": {"color": "gray", "lat0": [5, 17], "lon0": [360 - 110, 275]},
+    "teh": {"color": "r", "lat0": [13, 15.5], "lon0": [260, 275]},
+    "pap": {"color": "b", "lat0": [-np.inf, 13], "lon0": [360 - 90, 275]},
+    "oce": {"color": "g", "lat0": [8, 12], "lon0": [360 - 105, 360 - 97]},
+}
+
+
 @guvectorize(
-    [(float32[:], float64[:], float64[:]), (float64[:], float64[:], float64[:]),],
+    [
+        (float32[:], float64[:], float64[:]),
+        (float64[:], float64[:], float64[:]),
+    ],
     "(i), (i) -> ()",
     nopython=True,
 )
 def _gufunc_hmxl(b, z, out):
     out[:] = np.nan
-    
+
     mask = ~np.isnan(b)
     b = b[mask]
     z = z[mask]
-    
+
     if len(b) == 0:
         return
 
@@ -30,7 +41,7 @@ def _gufunc_hmxl(b, z, out):
     ip = idx + 1
     if dbdz[idx] - dbdz[ip] < 0:
         ip = idx - 1
-    
+
     if np.abs(dbdz[idx] - dbdz[ip]) < 1e-10:
         hmxl = z[ip]
     else:
@@ -46,7 +57,7 @@ def calc_hmxl(pdens):
     zdim = z.name
     return xr.apply_ufunc(
         _gufunc_hmxl,
-        -9.81/1025 * pdens,
+        -9.81 / 1025 * pdens,
         -np.abs(z),
         input_core_dims=[(zdim,), (zdim,)],
         dask="parallelized",
@@ -113,7 +124,6 @@ def calc_mld(pden):
     return xr.where(drho > 0.015, np.abs(drho.cf["Z"]), np.nan).cf.min("Z")
 
 
-
 def annotate_stats(ax, data, x=0.95, y=0.95, va="top", ha="right", **kwargs):
     """ Annotates axes with statistics of the plotted array. Only works with pcolormesh."""
     text = f"Mean: {np.abs(data).mean().values:.2f}\nMax: {data.max().values:.2f}\nMin: {data.min().values:.2f}"
@@ -139,7 +149,11 @@ def contour_over_under(fg, levels=3, **kwargs):
     kwargs.setdefault("linewidths", 1)
 
     fg.map_dataarray(
-        xr.plot.contour, x=fg._x_var, y=fg._y_var, levels=newlevels, **kwargs,
+        xr.plot.contour,
+        x=fg._x_var,
+        y=fg._y_var,
+        levels=newlevels,
+        **kwargs,
     )
 
 
@@ -153,7 +167,8 @@ def fg_map(fg, func, *args, **kwargs):
     for ax, loc in zip(fg.axes.flat, fg.name_dicts.flat):
         subset = fg.data.loc[loc]
         func(ax, subset, *args, **kwargs)
-        
+
+
 def single_contour_over_under(array, hdl, levels=3, **kwargs):
     assert isinstance(levels, int)
 
@@ -191,7 +206,6 @@ def euc_transport_y(u):
     trans.attrs["units"] = "m²/s"
     trans.attrs["long_name"] = "EUC transport [$\int$ u {u > 0} dz]"
     return trans
-
 
 
 def plot_section(lon):
@@ -320,8 +334,8 @@ def plot_section_diff(lon, ymax=22):
     fg.fig.suptitle(
         f"MOM6 monthly mean - Argo Monthly Mean [color];MOM6[red], {-1*lon}W", y=1.01
     )
-    
-    
+
+
 def calc_eqadcp(ds):
 
     eqadcp = ds.cf.sel(
@@ -343,3 +357,27 @@ def get_selector(ds):
     }
 
     return selector
+
+
+def plot_tracks(masked, kind, initial=True, **kwargs):
+    ntracks = masked.sizes["track"]
+    kwargs.setdefault("lw", 0.25)
+    hdl = None
+    for itrack in range(masked.sizes["track"]):
+        sub = masked.isel(track=itrack)
+        hdl = plt.plot(
+            sub.longitude,
+            sub.latitude,
+            label=f"{kind}: {ntracks}",
+            **kwargs,
+        )
+        if initial:
+            plt.plot(
+                sub.lon0,
+                sub.lat0,
+                marker=".",
+                color=kwargs.get("color", "k"),
+                markersize=4,
+            )
+
+    return hdl
