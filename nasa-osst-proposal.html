@@ -2586,13 +2586,13 @@ Attributes:
     standard_name:  longitude
     units:          degrees_east
     min:            0.0
-    max:            359.99936</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'longitude'</div><ul class='xr-dim-list'><li><span>obs</span>: 25871877</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-604c9ccc-71f7-481a-88f9-bc4634205213' class='xr-array-in' type='checkbox' checked><label for='section-604c9ccc-71f7-481a-88f9-bc4634205213' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>19.32 19.24 19.18 19.12 19.06 18.97 ... 256.4 256.4 256.4 256.4 256.4</span></div><div class='xr-array-data'><pre>array([ 19.3175,  19.2417,  19.1798, ..., 256.399 , 256.402 , 256.405 ],
-      dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-81b083d8-1b34-4184-b2ab-b45f603da407' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-81b083d8-1b34-4184-b2ab-b45f603da407' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-e0c96460-cd37-4414-b22a-8703c3cdc414' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e0c96460-cd37-4414-b22a-8703c3cdc414' class='xr-section-summary' >Attributes: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Longname :</span></dt><dd>longitude of measurement</dd><dt><span>description :</span></dt><dd>observation longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>min :</span></dt><dd>0.0</dd><dt><span>max :</span></dt><dd>359.99936</dd></dl></div></li></ul></div></div></div></div>
+    max:            359.99936</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'longitude'</div><ul class='xr-dim-list'><li><span>obs</span>: 25871877</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-b713494f-4ca4-47a1-be24-652ce2b46f34' class='xr-array-in' type='checkbox' checked><label for='section-b713494f-4ca4-47a1-be24-652ce2b46f34' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>19.32 19.24 19.18 19.12 19.06 18.97 ... 256.4 256.4 256.4 256.4 256.4</span></div><div class='xr-array-data'><pre>array([ 19.3175,  19.2417,  19.1798, ..., 256.399 , 256.402 , 256.405 ],
+      dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-718963fc-f4ad-482c-8a1c-28882daf12cd' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-718963fc-f4ad-482c-8a1c-28882daf12cd' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-6b104c28-ab0f-4107-b4cb-cd2e0b1d08b9' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6b104c28-ab0f-4107-b4cb-cd2e0b1d08b9' class='xr-section-summary' >Attributes: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Longname :</span></dt><dd>longitude of measurement</dd><dt><span>description :</span></dt><dd>observation longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>min :</span></dt><dd>0.0</dd><dt><span>max :</span></dt><dd>359.99936</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">tracks</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-    <span class="p">{</span><span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="s2">&quot;latitude &gt; 3 and latitude &lt; 20 and longitude &gt; 180 and longitude &lt; 360-75&quot;</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;obs&quot;</span><span class="p">:</span> <span class="s2">&quot;latitude &gt; 3 and latitude &lt; 20 and longitude &gt; 180 and longitude &lt; 360-65&quot;</span><span class="p">}</span>
 <span class="p">)</span>
 <span class="n">subset</span><span class="o">.</span><span class="n">track</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 </pre></div>
@@ -2950,7 +2950,7 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;track&#x27; (obs: 718979)&gt;
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;track&#x27; (obs: 763196)&gt;
 array([    72,     72,     72, ..., 352341, 352341, 352341], dtype=uint32)
 Dimensions without coordinates: obs
 Attributes:
@@ -2958,7 +2958,7 @@ Attributes:
     description:  eddy identification number
     units:        ordinal
     min:          0
-    max:          352416</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'track'</div><ul class='xr-dim-list'><li><span>obs</span>: 718979</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-4980996e-634e-4eb3-ac52-e674cc8e188a' class='xr-array-in' type='checkbox' checked><label for='section-4980996e-634e-4eb3-ac52-e674cc8e188a' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>72 72 72 72 72 72 72 ... 352341 352341 352341 352341 352341 352341</span></div><div class='xr-array-data'><pre>array([    72,     72,     72, ..., 352341, 352341, 352341], dtype=uint32)</pre></div></div></li><li class='xr-section-item'><input id='section-76a07d01-6d1c-4838-9786-ff84c4ceb75e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-76a07d01-6d1c-4838-9786-ff84c4ceb75e' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-e6e1f203-cec4-4166-bf73-a6ed67e4acc7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e6e1f203-cec4-4166-bf73-a6ed67e4acc7' class='xr-section-summary' >Attributes: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Longname :</span></dt><dd>track_number</dd><dt><span>description :</span></dt><dd>eddy identification number</dd><dt><span>units :</span></dt><dd>ordinal</dd><dt><span>min :</span></dt><dd>0</dd><dt><span>max :</span></dt><dd>352416</dd></dl></div></li></ul></div></div></div></div>
+    max:          352416</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'track'</div><ul class='xr-dim-list'><li><span>obs</span>: 763196</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-42bab11a-3e54-4ee6-8802-9a002c8a3082' class='xr-array-in' type='checkbox' checked><label for='section-42bab11a-3e54-4ee6-8802-9a002c8a3082' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>72 72 72 72 72 72 72 ... 352341 352341 352341 352341 352341 352341</span></div><div class='xr-array-data'><pre>array([    72,     72,     72, ..., 352341, 352341, 352341], dtype=uint32)</pre></div></div></li><li class='xr-section-item'><input id='section-60984ac1-d46c-40d9-bad2-a826d37e1114' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-60984ac1-d46c-40d9-bad2-a826d37e1114' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-5f05774e-66e8-4da3-88e7-a34f04f40b00' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5f05774e-66e8-4da3-88e7-a34f04f40b00' class='xr-section-summary' >Attributes: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Longname :</span></dt><dd>track_number</dd><dt><span>description :</span></dt><dd>eddy identification number</dd><dt><span>units :</span></dt><dd>ordinal</dd><dt><span>min :</span></dt><dd>0</dd><dt><span>max :</span></dt><dd>352416</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2968,12 +2968,12 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([3.530e+02, 3.530e+02, 1.103e+03, 2.918e+03, 1.976e+03, 1.361e+03,
-        1.001e+03, 7.400e+02, 5.390e+02, 4.290e+02, 2.830e+02, 2.390e+02,
-        1.920e+02, 1.460e+02, 1.230e+02, 9.600e+01, 6.200e+01, 6.200e+01,
-        4.000e+01, 4.000e+01, 3.900e+01, 3.100e+01, 2.100e+01, 1.900e+01,
-        1.700e+01, 1.400e+01, 1.300e+01, 9.000e+00, 6.000e+00, 2.000e+00,
-        1.000e+00, 5.000e+00, 0.000e+00, 2.000e+00, 3.000e+00, 3.000e+00,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([4.060e+02, 3.860e+02, 1.147e+03, 3.051e+03, 2.075e+03, 1.417e+03,
+        1.052e+03, 7.600e+02, 5.590e+02, 4.370e+02, 3.020e+02, 2.650e+02,
+        2.110e+02, 1.620e+02, 1.400e+02, 1.060e+02, 7.400e+01, 7.100e+01,
+        4.800e+01, 5.000e+01, 4.400e+01, 3.100e+01, 2.100e+01, 2.100e+01,
+        1.700e+01, 1.400e+01, 1.400e+01, 1.000e+01, 7.000e+00, 2.000e+00,
+        1.000e+00, 5.000e+00, 0.000e+00, 3.000e+00, 3.000e+00, 3.000e+00,
         2.000e+00, 1.000e+00, 0.000e+00, 3.000e+00, 1.000e+00, 0.000e+00,
         0.000e+00, 0.000e+00, 1.000e+00, 0.000e+00, 0.000e+00, 0.000e+00,
         0.000e+00]),
@@ -3019,6 +3019,19 @@ Attributes:
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bytrack</span><span class="o">.</span><span class="n">lon0</span><span class="p">,</span> <span class="n">bytrack</span><span class="o">.</span><span class="n">lat0</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2adf68245190&gt;]
+</pre></div>
+</div>
+<img alt="_images/nasa-osst-proposal_30_1.png" src="_images/nasa-osst-proposal_30_1.png" />
+</div>
+</div>
 </div>
 <div class="section" id="chosen-eddy-tracks">
 <h2>Chosen eddy tracks<a class="headerlink" href="#chosen-eddy-tracks" title="Permalink to this headline">¶</a></h2>
@@ -3034,6 +3047,7 @@ Attributes:
         <span class="o">&amp;</span> <span class="p">(</span><span class="n">bytrack</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="s2">&quot;itime&quot;</span><span class="p">)</span>
         <span class="o">&amp;</span> <span class="p">(</span><span class="n">bytrack</span><span class="o">.</span><span class="n">speed_radius</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="s2">&quot;itime&quot;</span><span class="p">)</span>
     <span class="p">)</span>
+    <span class="c1">#print(name, np.sum(mask).data)</span>
     <span class="n">bytrack</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
 
 
@@ -3043,20 +3057,31 @@ Attributes:
     <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="n">masked</span> <span class="o">=</span> <span class="n">bytrack</span><span class="o">.</span><span class="n">query</span><span class="p">({</span><span class="s2">&quot;track&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;kind == </span><span class="si">{</span><span class="n">kind</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">})</span>
-    <span class="n">hdl</span> <span class="o">=</span> <span class="n">plot_tracks</span><span class="p">(</span><span class="n">masked</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
-    <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hdl</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">hdl</span> <span class="o">=</span> <span class="n">etpac</span><span class="o">.</span><span class="n">plot_tracks</span><span class="p">(</span><span class="n">masked</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kind</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">hdl</span><span class="p">:</span>
+        <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hdl</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="n">topo</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">280</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
+<span class="n">topo_subset</span> <span class="o">=</span> <span class="n">topo</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">110</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
+<span class="n">topo_subset</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">topo_subset</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="mi">360</span>
+<span class="n">topo_subset</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span>
     <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.3</span>
 <span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">handles</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">280</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/nasa-osst-proposal_31_0.png" src="_images/nasa-osst-proposal_31_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>teh
+pap
+oce
+pan
+</pre></div>
+</div>
+<img alt="_images/nasa-osst-proposal_32_1.png" src="_images/nasa-osst-proposal_32_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -10148,8 +10173,8 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/nasa-osst-proposal_42_0.png" src="_images/nasa-osst-proposal_42_0.png" />
-<img alt="_images/nasa-osst-proposal_42_1.png" src="_images/nasa-osst-proposal_42_1.png" />
+<img alt="_images/nasa-osst-proposal_43_0.png" src="_images/nasa-osst-proposal_43_0.png" />
+<img alt="_images/nasa-osst-proposal_43_1.png" src="_images/nasa-osst-proposal_43_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -11318,7 +11343,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/nasa-osst-proposal_49_0.png" src="_images/nasa-osst-proposal_49_0.png" />
+<img alt="_images/nasa-osst-proposal_50_0.png" src="_images/nasa-osst-proposal_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -11456,7 +11481,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/nasa-osst-proposal_53_0.png" src="_images/nasa-osst-proposal_53_0.png" />
+<img alt="_images/nasa-osst-proposal_54_0.png" src="_images/nasa-osst-proposal_54_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -11887,7 +11912,7 @@ Coordinates:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/nasa-osst-proposal_61_0.png" src="_images/nasa-osst-proposal_61_0.png" />
+<img alt="_images/nasa-osst-proposal_62_0.png" src="_images/nasa-osst-proposal_62_0.png" />
 </div>
 </div>
 </div>
