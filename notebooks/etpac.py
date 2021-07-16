@@ -9,7 +9,7 @@ eddy_kinds = {
     "teh": {"color": "r", "lat0": [13, 15.5], "lon0": [260, 275]},
     "pap": {"color": "b", "lat0": [-np.inf, 13], "lon0": [360 - 90, 275]},
     "oce": {"color": "g", "lat0": [8, 12], "lon0": [360 - 105, 360 - 97]},
-    "pan": {"color": "teal", "lat0": [0, 8], "lon0": [260, 290]},  # detection prevented by amplitude criteria
+    #"pan": {"color": "teal", "lat0": [0, 8], "lon0": [260, 290]},  # detection prevented by amplitude criteria
 }
 
 
